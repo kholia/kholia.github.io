@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <link rel="ft8 icon" type="image/x-icon" href="wspr.ico">
+    <title>Easy FT8 Encoder</title>
+    <style>
+      label { display: table-cell; }
+      input { display: table-cell; }
+
+      div.box {
+        overflow: hidden;
+        border: 1px solid black;
+        display: inline-block;
+        padding: 10px;
+      }
+      span.oneline {
+        font-size: 24px;
+      }
+      div.outer_box {
+        display: block;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="outer_box">
+      <div class="box"><span class="oneline">Easy FT8 Encoder</span></div>
+    </div>
+    <br><br>
+    <label for="message">Message:</label>
+    <input type="text" id="message" name="message" placeholder="VU3FOE VU3CER MK68"><br><br>
+    <button class="runbutton">Run FT8 Encoder</button>
+
+    <br>
+    <p>
+      <br>
+      Output (79 8FSK symbols):
+    </p>
+    <p>
+      <textarea id="output" rows="8" cols="40"></textarea>
+    </p>
+
+    <br>
+    <div class="outer_box">
+       <div class="box"><span class="oneline">Useful References</span></div>
+    </div>
+    <p>
+       <a href="https://github.com/kholia/ft8_encoder_web">Source code for this page</a>
+    </p>
+    <p>
+       <a href="https://dxcluster.ha8tks.hu/hamgeocoding/">Maidenhead Grid Square Locator Map</a>
+    </p>
+    <p>
+       <a href="https://kholia.github.io/wspr_encoder.html">Easy WSPR Encoder</a>
+    </p>
+
+    <script type='text/javascript'>
+      document.getElementById("output").value = "";
+
+      document.querySelector('.runbutton')
+        .addEventListener('click', function() {
+          var message = document.getElementById("message").value;
+          if (message === "") {
+            message = document.getElementById("message").getAttribute("placeholder");
+          }
+          console.log(message);
+          var len = 80;
+          var actual_length = 79;
+
+          var buf = Module._malloc(len);
+          aresult = Module.ccall('ft8_encode', // name of C function
+            'number', // return type
+            ['string', 'number'], // argument types
+            [message, buf]); // arguments
+          console.log("Status (0 -> OK) is " + aresult);
+
+          var data = new Uint8Array(Module.HEAPU8.buffer, buf, len).slice(0, actual_length);
+          var output = data.join(",");
+          // console.log(output);
+          document.getElementById("output").value = output;
+        });
+    </script>
+    <script async type="text/javascript" src="ft8_encoder.js"></script>
+  </body>
+</html>
+
+

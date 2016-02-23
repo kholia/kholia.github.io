@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <link rel="wspr icon" type="image/x-icon" href="wspr.ico">
+    <title>Easy WSPR Encoder</title>
+    <style>
+      label { display: table-cell; }
+      input { display: table-cell; }
+
+      div.box {
+        overflow: hidden;
+        border: 1px solid black;
+        display: inline-block;
+        padding: 10px;
+      }
+      span.oneline {
+        font-size: 24px;
+      }
+      div.outer_box {
+        display: block;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="outer_box">
+      <div class="box"><span class="oneline">Easy WSPR Encoder</span></div>
+    </div>
+    <br><br>
+    <label for="callsign">Callsign:</label>
+    <input type="text" id="callsign" name="callsign" placeholder="VU3CER"><br><br>
+    <label for="grid">Grid:</label>
+    <input type="text" id="grid" name="grid" placeholder="MK68"><br><br>
+    <label for="power">Power (dBm):</label>
+    <input type="text" id="power" name="power" placeholder="33"><br><br>
+    <button class="runbutton">Run WSPR Encoder</button>
+
+    <br>
+    <p>
+      <br>
+      Output (162 4FSK symbols):
+    </p>
+    <p>
+      <textarea id="output" rows="8" cols="40"></textarea>
+    </p>
+    <p>
+      More Compressed Output (162 4FSK symbols in 41 bytes):
+    </p>
+    <p>
+      <textarea id="optimized_output" rows="8" cols="40"></textarea>
+      <br><br>
+      [Decompress] Left-To-Right symbols: ((V&0xC0)>>6), ((V&0x30)>>4), ((V&0x0C)>>2), (V&0x03)
+    </p>
+
+    <p>
+      <textarea id="decompressed_output" rows="8" cols="40"></textarea>
+    </p>
+
+    <br>
+    <div class="outer_box">
+       <div class="box"><span class="oneline">Useful References</span></div>
+    </div>
+    <p>
+       <a href="https://github.com/kholia/wspr_encoder_web">Source code for this page</a>
+    </p>
+    <p>
+       <a href="http://physics.princeton.edu/pulsar/K1JT/doc/wspr/wspr-main.html#CONVERSION">Watts to dBm (table)</a>
+    </p>
+    <p>
+       <a href="https://dxcluster.ha8tks.hu/hamgeocoding/">Maidenhead Grid Square Locator Map</a>
+    </p>
+    <p>
+       <a href="https://www.qsl.net/bd1es/">Author of the WSPR encoding library</a>
+    </p>
+    <p>
+       <a href="https://kholia.github.io/ft8_encoder.html">Easy FT8 Encoder</a>
+    </p>
+
+    <script type='text/javascript'>
+      var actual_length = 162;
+      var len = actual_length + 2;  // 162 symbols + zero-pad at end
+
+      function decompress(buffer, decompressed_output) {
+        var idx = 0;
+        for (var i = 0; i < len/4; i = i + 1) {
+          decompressed_output[idx] = (buffer[i] & 0xC0) >> 6;
+          decompressed_output[idx+1] = (buffer[i] & 0x30) >> 4;
+          decompressed_output[idx+2] = (buffer[i] & 0x0C) >> 2;
+          decompressed_output[idx+3]= (buffer[i] & 0x03);
+          idx = idx + 4;
+        }
+      }
+
+      function compress_more(buffer, more_compressed_output) {
+        var idx = 0;
+        for (var i = 0; i < len; i = i + 4) {
+          more_compressed_output[idx] = ((buffer[i] << 6) + (buffer[i+1] << 4) + (buffer[i+2] << 2) + buffer[i+3]);
+          // console.log(buffer[i], buffer[i+1], buffer[i+2], buffer[i+3]);
+          // console.log(more_compressed_output[idx]);
+          idx = idx + 1;
+        }
+      }
+
+      document.getElementById("output").value = "";
+      document.getElementById("optimized_output").value = "";
+      document.getElementById("decompressed_output").value = "";
+
+      document.querySelector('.runbutton')
+        .addEventListener('click', function() {
+          var callsign = document.getElementById("callsign").value;
+          if (callsign === "") {
+            callsign= document.getElementById("callsign").getAttribute("placeholder");
+          }
+          // console.log(callsign);
+          var grid = document.getElementById("grid").value;
+          if (grid=== "") {
+            grid = document.getElementById("grid").getAttribute("placeholder");
+          }
+          // console.log(grid);
+          var power = document.getElementById("power").value;
+          if (power === "") {
+            power = document.getElementById("power").getAttribute("placeholder");
+          }
+          // console.log(power);
+
+          var buf = Module._malloc(len);
+          aresult = Module.ccall('real_main', // name of C function
+            'number', // return type
+            ['string','string','string','number'], // argument types
+            [callsign, grid, power, buf]); // arguments
+          console.log("Status (0 -> OK) is " + aresult);
+
+          // compress
+          var data = new Uint8Array(Module.HEAPU8.buffer, buf, len);
+          var output = data.slice(0, actual_length).join(", ");
+          // console.log(output);
+          document.getElementById("output").value = output;
+          var more_compressed_output = new Uint8Array(len/4);
+          compress_more(data, more_compressed_output);
+          var output = more_compressed_output.join(",");
+          document.getElementById("optimized_output").value = output;
+
+          // test decompression code
+          var decompressed_output = new Uint8Array(len);
+          decompress(more_compressed_output, decompressed_output);
+          var output = decompressed_output.slice(0, actual_length).join(",");
+          document.getElementById("decompressed_output").value = output;
+        });
+    </script>
+    <script async type="text/javascript" src="wspr_encoder.js"></script>
+  </body>
+</html>
+
+
