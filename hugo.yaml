@@ -1,0 +1,136 @@
+baseURL: https://rfcorner.in/
+languageCode: en-us
+title: Dhiru's Notebook
+theme: ["hugo-embed-pdf-shortcode", "PaperMod"]
+sectionPagesMenu: main
+enableRobotsTXT: true
+minify:
+  disableXML: false
+  minifyOutput: true
+
+security:
+  enableInlineShortcodes: true
+
+params:
+  env: production # to enable google analytics, opengraph, twitter-cards and schema.
+  title: Dhiru's Notebook
+  description: "Dhiru's Solar Notebook"
+  keywords: [Blog, Portfolio, Dhiru, Kholia, Dhiru Kholia, Notebook, RF, Hacking, Security]
+  author: Dhiru Kholia
+  defaultTheme: auto # dark, light
+  disableThemeToggle: false
+
+  ShowReadingTime: true
+  ShowShareButtons: false
+  ShowPostNavLinks: true
+  ShowBreadCrumbs: true
+  ShowCodeCopyButtons: true
+  ShowWordCount: true
+  ShowRssButtonInSectionTermList: true
+  UseHugoToc: true
+  disableSpecial1stPost: false
+  disableScrollToTop: false
+  comments: false
+  hidemeta: false
+  hideSummary: false
+  showtoc: false
+  tocopen: false
+
+  # profile-mode
+  profileMode:
+    enabled: false # needs to be explicitly set
+
+  # home-info mode
+  homeInfoParams:
+    Title: "Hello! \U0001F44B"
+
+  socialIcons:
+    - name: x
+      url: "https://x.com/DhiruKholia"
+    - name: github
+      url: "https://github.com/kholia"
+
+  cover:
+    hidden: true # hide everywhere but not in structured data
+    hiddenInList: true # hide on list pages and home
+    hiddenInSingle: true # hide on single page
+
+  # for search
+  # https://fusejs.io/api/options.html
+  fuseOpts:
+    isCaseSensitive: false
+    shouldSort: true
+    location: 0
+    distance: 1000
+    threshold: 0.4
+    minMatchCharLength: 0
+    limit: 10 # refer: https://www.fusejs.io/api/methods.html#search
+    keys: ["title", "permalink", "summary", "content"]
+menu:
+  main:
+    - identifier: tags
+      name: Tags
+      url: /tags/
+      weight: 20
+# Read: https://github.com/adityatelange/hugo-PaperMod/wiki/FAQs#using-hugos-syntax-highlighter-chroma
+pygmentsUseClasses: true
+markup:
+  highlight:
+    noClasses: false
+    # anchorLineNos: true
+    codeFences: true
+    guessSyntax: true
+    # lineNos: true
+    style: monokai
+
+  goldmark:
+    duplicateResourceFiles: false
+    extensions:
+      cjk:
+        eastAsianLineBreaks: false
+        eastAsianLineBreaksStyle: simple
+        enable: false
+        escapedSpace: false
+      definitionList: true
+      extras:
+        delete:
+          enable: false
+        insert:
+          enable: false
+        mark:
+          enable: false
+        subscript:
+          enable: false
+        superscript:
+          enable: false
+      footnote: true
+      linkify: true
+      linkifyProtocol: https
+      passthrough:
+        delimiters:
+          block: []
+          inline: []
+        enable: false
+      strikethrough: true
+      table: true
+      taskList: true
+      typographer:
+        apostrophe: "'"
+        disable: false
+        ellipsis: '&hellip;'
+        emDash: '&mdash;'
+        enDash: '&ndash;'
+        leftAngleQuote: '&laquo;'
+        leftDoubleQuote: '"'
+        leftSingleQuote: "'"
+        rightAngleQuote: '&raquo;'
+        rightDoubleQuote: '"'
+        rightSingleQuote: "'"
+    renderer:
+      hardWraps: false
+      unsafe: true
+      xhtml: false
+
+caches:
+  images:
+    dir: :cacheDir/images
