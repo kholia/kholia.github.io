@@ -1,0 +1,5 @@
+halt
+savebin code_flash_before.bin 0x00000000 0x8000
+savebin data_flash_before.bin 0x00500000 0x600
+savebin sram_before.bin 0x20000000 0x1000
+exit

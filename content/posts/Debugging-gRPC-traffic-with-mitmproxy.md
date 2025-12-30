@@ -18,6 +18,8 @@ tags:
 
 Recently, I was stuck in figuring out how the Firebase gRPC calls worked and how I could generate, modify, and replay them. Trapping and modifying the existing gRPC traffic was not working too well. Finally, I took a step back and spent some time on learning how to build and debug simple Firebase applications. This approach helped me tremendously and I was able to make further progress with my original task in almost no time.
 
+## Solution
+
 You may find the following code sample useful when reversing / debugging Firebase applications.
 
 ```python
@@ -83,7 +85,7 @@ addons = [AddHeader()]
 
 Run `mitmproxy` with this plugin via the `mitmproxy -s plug.py` command.
 
-Findings:
+## Findings
 
 - Existing tools like `HTTP Toolkit` fare poorly when trying to replay the 'binary' gRPC traffic. `HTTP Toolkit` also makes modifications of binary request bodies hard. Hopefully these current limitations will be addressed in the near future.
 

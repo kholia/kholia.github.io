@@ -20,24 +20,28 @@ tags:
 
 [This code](https://github.com/kholia/ConsensusBasedTimeSync/tree/master/Wide-FT8-Tester) generates a .wav file which emulates a fully-populated FT8 band!
 
+## Usage
+
 This .wav file can then be played with `rpitx` on actual air (well on a dummy load) for receiver testing purposes.
 
 ![FT8 Full-Band Demo 1](/images/Wide-FT8-Tester-1.png)
 
 ![FT8 Full-Band Demo 2](/images/Wide-FT8-Tester-2.png)
 
-```
+```bash
 rm mixed.wav; sox -m *.wav mixed.wav
 
 sox mixed.wav -r 48000 sampleaudio.wav
 ```
 
-Now play sampleaudio.wav using https://github.com/F5OEO/rpitx.
+Now play sampleaudio.wav using [rpitx](https://github.com/F5OEO/rpitx).
 
-I have tested https://github.com/F5OEO/rpitx on Raspberry Pi Zero 2W TX'ing @ 14.074 MHz.
+## Testing
 
-References:
+I have tested [rpitx](https://github.com/F5OEO/rpitx) on Raspberry Pi Zero 2W TX'ing @ 14.074 MHz.
 
-- https://github.com/kholia/ConsensusBasedTimeSync/tree/master/Wide-FT8-Tester
+## References
 
-- https://github.com/kgoba/ft8_lib/ (source for `gen_ft8` binary)
+- [Wide-FT8-Tester Source](https://github.com/kholia/ConsensusBasedTimeSync/tree/master/Wide-FT8-Tester)
+
+- [ft8_lib](https://github.com/kgoba/ft8_lib/) (source for `gen_ft8` binary)

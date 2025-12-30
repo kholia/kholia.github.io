@@ -12,6 +12,8 @@ This note demonstrates a small `connectivity tester` / `check nets` program for
 KiCad. This program allows doing checks like: Is the `U1:8` pin connected to
 `GND`?
 
+## Motivation
+
 Sometimes visual errors can creep in the schematic (and the PCB subsequently).
 This `connectivity tester` allows expressing the same connections in a
 non-visual way (with a different probability of making errors).
@@ -25,9 +27,9 @@ continuously to ensure that the `circuit correctness` is still fine.
 Update: Yes, it support (UART and other) voltage compatibility checks now -
 thanks to Akshar Vastarpara (Vicharak) for this awesome idea.
 
-Code:
+## The Code
 
-```python3
+```python
 #!/usr/bin/env python3
 """
 check_nets_pcbnew.py — Assert footprint pad → net mapping in a KiCad .kicad_pcb using pcbnew.
@@ -539,9 +541,11 @@ Sample schematic:
 
 <br>
 
+## Example Test Cases
+
 Here are the test cases for this `*-QSD-v15` project:
 
-```
+```conf
 # Note: These test cases should ideally be derived from datasheets
 #
 # Usage: python check_nets_pcbnew.py board.kicad_pcb --test-file pcb_tests.txt --case U3:1=GND
@@ -599,9 +603,9 @@ U7:3=DOUT
 
 The test case language is decently expressive enough.
 
-Execution log:
+## Execution Log
 
-```
+```bash
 $ python3 check_nets_pcbnew.py SDR-Board.kicad_pcb --test-file pcb_tests.txt
 [PASS] U1:1 is on '/VIN'
 [PASS] U1:2 is on 'GND'
