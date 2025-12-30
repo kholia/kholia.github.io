@@ -75,8 +75,17 @@ LPF for the 20-17-15m bands:
 
 Note: We had to push the cutoff frequency to 25 MHz to get commercially-viable (available) high-voltage C0G caps.
 
+Alternate LPF for the 20-17-15m bands:
+
+![LPF MB Schematic](/images/LPF-MB-Design.png)
+
+![LPF MB Response](/images/LPF-MB-Response.png)
+
+
 References:
 
 - https://toroids.info/T50-6.php
+
+- https://toroids.info/T50-2.php
 
 - https://markimicrowave.com/technical-resources/tools/lc-filter-design-tool/

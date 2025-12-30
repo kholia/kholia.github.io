@@ -27,3 +27,5 @@ References:
 - https://www.lcsc.com/product-image/C22387935.html
 
 - See https://www.lcsc.com/search?q=YPRH1207C for the full range
+
+- Also see https://www.lcsc.com/search?q=XRRF7342 (only 7.5x7.5)
