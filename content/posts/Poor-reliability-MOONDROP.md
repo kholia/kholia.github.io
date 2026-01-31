@@ -18,7 +18,7 @@ tags:
 
 I had bought two pairs of MOONDROP Aria 2 IEMs after auditioning them at a Headphone Connect event.
 
-After a few months of usage, one of the Aria 2 earphones lost audio in the left earpiece. We got it 'serviced' under warranty from https://www.headphonezone.in.
+After a few months of usage, one of the Aria 2 earphones lost audio in the left earpiece. We got it 'serviced' under warranty from [Headphone Zone](https://www.headphonezone.in).
 
 After a year of almost no usage, the other pair of Aria 2 IEMs lost audio in one of the earpieces too!
 

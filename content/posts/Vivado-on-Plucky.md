@@ -9,11 +9,13 @@ tags:
 
 ### Notes to get Vivado 2025.1 running on Ubuntu 25.04 (plucky) Linux distribution.
 
-Original reference: https://pavel-demin.github.io/qmtech-xc7z020-notes/led-blinker-77-76/
+Original reference: [QMTech XC7Z020 Notes](https://pavel-demin.github.io/qmtech-xc7z020-notes/led-blinker-77-76/)
+
+## Setup
 
 Install dependencies:
 
-```
+```bash
 sudo apt-get update
 
 sudo apt-get --no-install-recommends install \
@@ -25,7 +27,7 @@ sudo apt-get --no-install-recommends install \
 
 Hack deps a bit:
 
-```
+```bash
 sudo ln -s /lib/x86_64-linux-gnu/libtinfo.so.6 /lib/x86_64-linux-gnu/libtinfo.so.5
 ```
 
@@ -35,7 +37,7 @@ You can now go ahead and run the Vivado installer.
 
 Use the following patch:
 
-```git diff
+```diff
 diff --git a/scripts/core.tcl b/scripts/core.tcl
 index 583de1b..79e3ae4 100644
 --- a/scripts/core.tcl
@@ -50,7 +52,9 @@ index 583de1b..79e3ae4 100644
  create_project -part $part_name $core_name tmp/cores
 ```
 
-```
+## Usage
+
+```bash
 user@system:~/repos/qmtech-xc7z020-notes$ source ~/Xilinx/2025.1/Vivado/settings64.sh
 user@system:~/repos/qmtech-xc7z020-notes$ make NAME=sdr_receiver_ft8_77_76 bit
 ...
@@ -285,12 +289,12 @@ index 1:
 	irlength 6
 ```
 
-```
+```bash
 sudo udevadm control --reload-rules && sudo udevadm trigger
 ```
 
-You can use https://github.com/trabucayre/openFPGALoader to quickly check that the board (+ FPGA) is being detected.
+You can use [openFPGALoader](https://github.com/trabucayre/openFPGALoader) to quickly check that the board (+ FPGA) is being detected.
 
 ### Bonus FPGA challenge
 
-Instead of the usual `blinky` challenge, can we get https://github.com/pavel-demin/qmtech-xc7z020-notes/blob/main/cores/dds.v running on various different 'cheap' FPGA boards?
+Instead of the usual `blinky` challenge, can we get [dds.v](https://github.com/pavel-demin/qmtech-xc7z020-notes/blob/main/cores/dds.v) running on various different 'cheap' FPGA boards?

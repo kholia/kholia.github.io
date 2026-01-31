@@ -77,15 +77,15 @@ these under WSL 2 on a Windows 11 laptop for a change.
 
 Fetch and extract the affected OpenSSL source code.
 
-```
-wget http://www.openssl.org/source/openssl-1.0.1f.tar.gz
+```bash
+wget https://www.openssl.org/source/openssl-1.0.1f.tar.gz
 
 tar -xf openssl-1.0.1f.tar.gz
 ```
 
 ## Taint Analyzer Configuration
 
-```
+```yaml
 $ cat ~/taint_config.yml
 Filters:
 
@@ -110,7 +110,7 @@ analysis.
 
 Replace the following macro with a function definition:
 
-```
+```c
 #define n2s(c,l)        (l =((IDEA_INT)(*((c)++)))<< 8L, \
                      l|=((IDEA_INT)(*((c)++)))      )
 
@@ -121,7 +121,7 @@ Rename `memcpy` to `memcpy_` in `ssl/d1_both.c` file.
 
 Declare the following function helper:
 
-```
+```c
 void memcpy_(void *a, void *b, size_t len);
 ```
 
@@ -129,19 +129,19 @@ Patch the `n2s` calls in `ssl/d1_both.c` file:
 
 Before:
 
-```
+```c
 n2s(p, payload);
 ```
 
 After:
 
-```
+```c
 n2s(p, &payload);
 ```
 
 ## Let's go!
 
-```
+```bash
 user@newie:~/openssl-1.0.1f$ ./config
 ...
 Configured for linux-x86_64.
@@ -153,11 +153,11 @@ scan-build: Using '/usr/lib/llvm-20/bin/clang' for static analysis
 
 ssl/d1_both.c:1490:12: warning: Untrusted data is passed to a user-defined sink
  1490 |                 buffer = OPENSSL_malloc(1 + 2 + payload + padding);
-  |                          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~```
+  |                          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 include/openssl/crypto.h:368:29: note: expanded from macro 'OPENSSL_malloc'
   368 | #define OPENSSL_malloc(num)     CRYPTO_malloc((int)num,__FILE__,__LINE__)
-  |                                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~```
+  |                                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 ssl/d1_both.c:1496:3: warning: Untrusted data is passed to a user-defined sink
  1496 |                 memcpy_(bp, pl, payload);
