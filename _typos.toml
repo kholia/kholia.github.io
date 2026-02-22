@@ -2,3 +2,6 @@
 optin = "optin"
 Iinclude = "Iinclude"
 DOUT = "DOUT"
+THT = "THT"
+Mosquitto = "Mosquitto"
+mosquitto = "mosquitto"

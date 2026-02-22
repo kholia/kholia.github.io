@@ -8,9 +8,12 @@ tags:
 - Antenna
 - HAM
 - Amateur Radio
+- PA0FRI
 ---
 
 My homebrewed PA0FRI Active Antenna is working well from a very physically constrained location.
+
+## Design
 
 3D render:
 
@@ -20,7 +23,7 @@ Schematic:
 
 ![PA0FRI Active Antenna Schematic](/images/PA0FRI-Active-Antenna-Schematic.png)
 
-Results:
+## Results
 
 ![PA0FRI Active Antenna Results](/images/FT8-Reception-Results-4.png)
 
@@ -34,13 +37,15 @@ My live reception results from this antenna can be viewed at the following URL(s
 
 - [Live FT8 reception results](https://pskreporter.info/pskmap.html?preset&callsign=VU3CER&txrx=rx&timerange=86400)
 
+## Performance Testing
+
 Testing Update: A 10m EFHW antenna installed in the same 'surrounded balcony' location receives less than half-the-countries as compared to the PA0FRI active antenna.
 
 Magic might not exist for grownups but the reception results of this Active Antenna from a very limited physical location are nothing short of magical!
 
 Special shout-out goes to Ismo (OH2FTG) and Gajendra Kumar Sir for their guidance on these topics - thank you!
 
-Notes:
+## Notes
 
 The first two decodes in the following screenshot are from a "turned off" active antenna. The last two decodes are from the same active antenna when turned on.
 
@@ -48,11 +53,13 @@ The first two decodes in the following screenshot are from a "turned off" active
 
 Remember the `Don't let the perfect be the enemy of the good` saying? While theoretically better active-antenna designs exist, we are not keen in pursuing those designs because the results of this PA0FRI AA are good enough (TM).
 
-References:
+## References
 
 - [Simple active receive loop antenna](https://www.pa1m.nl/simple-active-receive-loop/) - for physical construction aspects
 
-Update (14-August-2025): My Active Antenna was performing pretty well for weeks and then the performance dropped suddenly one day - this got me wondering. I went to the terrace and found that the DC power supply line had gotten disconnected (some guest seems to have tripped on this line during a recent `pooja` event at home).
+## Updates
+
+**Update (14-August-2025):** My Active Antenna was performing pretty well for weeks and then the performance dropped suddenly one day - this got me wondering. I went to the terrace and found that the DC power supply line had gotten disconnected (some guest seems to have tripped on this line during a recent `pooja` event at home).
 
 ![Proof of the pudding](/images/AA-Proof-of-the-pudding.png)
 

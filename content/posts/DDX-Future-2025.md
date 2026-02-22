@@ -29,6 +29,8 @@ Here is our plan to supply the DDX to customers:
 
 - Required a small licensing fee for the software firmware part. This is how we get to keep the hobby self-sustaining!
 
+## Architecture
+
 Future DDX architecture ideas (from Ismo and other folks):
 
 Antenna ➔ CD2003 ➔ 455 kHz IF ➔ Ceramic filter SMD (HCI) ➔ "IF amplifier" needed? ➔ Pico 2's ADC ➔ Down-conversion and processing in digital domain ➔ Expose the processed audio samples over USB (Pico 2 acts as a sound card).
@@ -39,7 +41,9 @@ Alternate easier and traditional radio architecture:
 
 Antenna ➔ CD2003 ➔ 455 kHz IF ➔ Ceramic filter SMD (HCI) ➔ BFO mixer ("product detector") ➔ Direct Sound output ➔ Pico 2's ADC ➔ Pico exposes the audio samples over USB
 
-Alternate ideas: One of the more promising and well-tested CD2003 designs is documented @ http://www.kh-gps.de/cd2003_rx.htm. This actually looks like the most promising option!
+Alternate ideas: One of the more promising and well-tested CD2003 designs is documented at [KH-GPS CD2003 RX](http://www.kh-gps.de/cd2003_rx.htm). This actually looks like the most promising option!
+
+## Immediate Plans
 
 Immediate architecture (for DDX-Commercial series):
 
@@ -51,12 +55,12 @@ In other news, I got a `DX 100` award with DDX on 10m recently - w00t!
 
 ![DDX DX 100 award](/images/DX-100-Award-October-2025.png)
 
-References:
+## References
 
-- https://github.com/steve-m/hsdaoh-rp2350 (see `internal_adc` section)
+- [HSDAOH on RP2350](https://github.com/steve-m/hsdaoh-rp2350) (see `internal_adc` section)
 
   This way we can continue using `RP2350` instead of moving to something like `STM32H5` immediately
 
-- BFO handling code: https://github.com/mpmarks/pico-adx/blob/master/src/main.cpp
+- [Pico-ADX BFO Code](https://github.com/mpmarks/pico-adx/blob/master/src/main.cpp)
 
-- http://www.kh-gps.de/cd2003_rx.htm
+- [KH-GPS CD2003 RX](http://www.kh-gps.de/cd2003_rx.htm)

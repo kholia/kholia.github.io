@@ -15,19 +15,19 @@ tags:
 
 While running https://github.com/fhoedemakers/pico-infonesPlus, I found that my SNES gaming pad was not fully supported.
 
-Specifically the UP DOWN and LEFT RIGHT keys were not working.
+Specifically, the UP/DOWN and LEFT/RIGHT keys were not working.
 
 Let's debug this a bit:
 
 Plug in the gaming pad on a Linux box and run the following command (`hidraw5` will need to be changed as needed):
 
-```
+```bash
 $ lsusb
 ...
 Bus 001 Device 063: ID 0810:e501 Personal Communication Systems, Inc. SNES Gamepad
 ```
 
-```
+```bash
 $ sudo hexdump -C /dev/hidraw5
 ...
 00004a50  01 80 80 7f 7f 0f 00 00  01 80 80 7f 00 0f 00 00  |................|
@@ -42,7 +42,7 @@ The byte pattern at `byte 5` position is changing (`00` to `7f` pattern).
 
 Let's check the `pico-infonesPlus` code for handling NES / SNES controllers:
 
-```
+```cpp
 $ vim pico_shared/hid_app.cpp
 ...
 (r->byte7 & MantaPadReport::Button::START ? io::GamePadState::Button::START : 0) |

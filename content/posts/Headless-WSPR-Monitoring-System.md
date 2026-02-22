@@ -24,7 +24,7 @@ SDR.
 
 Install dependencies:
 
-```
+```bash
 sudo apt-get update
 
 sudo apt-get install airspyhf \
@@ -32,7 +32,7 @@ sudo apt-get install airspyhf \
   pulseaudio-utils git vim fluxbox xterm tightvncserver
 ```
 
-```
+```bash
 sudo apt-get install cmake pkg-config \
     libusb-1.0-0-dev \
     libasound2-dev \
@@ -46,7 +46,7 @@ sudo apt-get install cmake pkg-config \
 
 Build `airspyhf-fmradion` SDR software:
 
-```
+```bash
 cd ~
 
 git clone --recursive https://github.com/jj1bdx/airspy-fmradion.git
@@ -58,21 +58,19 @@ cmake .
 make -j8
 ```
 
-Optional: Install https://tailscale.com/ on the RPi.
+Optional: Install [Tailscale](https://tailscale.com/) on the RPi.
 
-Recommended: Use a `RF clipper` for protecting the SDR - see https://www.kk5jy.net/rf-clipper/ for details.
+Recommended: Use a `RF clipper` for protecting the SDR - see [RF Clipper](https://www.kk5jy.net/rf-clipper/) for details.
 
 Antenna: See [My PA0FRI Active Antenna article]({{< relref "Active-Antenna-PA0FRI-Results.md" >}}) for details on the "best" antenna for RX purposes.
 
 Setup: Active antenna ➔ 20 meter BPF ➔ RF limiter ➔ SDR
 
-Tips
-
-- Check time sync on RPi using the `timedatectl show-timesync` command
+**Tips:** Check time sync on RPi using the `timedatectl show-timesync` command
 
 ### Setup Headless Hopping Skimmer
 
-```
+```bash
 $ vim  ~/.asoundrc
 pcm.!default {
         type hw
@@ -149,23 +147,23 @@ export XKL_XMODMAP_DISABLE=1
 /etc/X11/Xsession
 ```
 
-```
+```bash
 chmod +x ~/.vnc/xstartup
 ```
 
 Set up the VNC password (once):
 
-```
+```bash
 vncpasswd
 ```
 
 In WSJT-X do the following:
 
-```
+```text
 File > Settings > Audio, Input Set to "plughw:CARD=Loopback,DEV=1", "Left"
 ```
 
-```
+```text
 File > Settings > Audio, Output Set to "plughw:CARD=Loopback_1,DEV=0", "Both"
 ```
 
@@ -185,8 +183,8 @@ File > Settings > Audio, Output Set to "plughw:CARD=Loopback_1,DEV=0", "Both"
 
 - [RSP1 Clone Notes]({{< relref "RSP1-Clone-Notes.md" >}})
 
-- https://github.com/kholia/airspy-utils
+- [Airspy Utils](https://github.com/kholia/airspy-utils)
 
-- https://wspr.rocks/
+- [WSPR Rocks](https://wspr.rocks/)
 
-- https://www.kk5jy.net/rf-clipper/
+- [RF Clipper](https://www.kk5jy.net/rf-clipper/)
