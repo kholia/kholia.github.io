@@ -24,7 +24,7 @@ I recently spotted the `Tokmas CI7N170SM` TO-247 part on LCSC. It seems like a p
 
 This could be a better part for our [Baby QRO amplifier]({{< relref "Baby-QRO-Switching-Amplifier.md" >}}).
 
-Datasheet excerpts:
+## Datasheet Excerpts
 
 ![New hotness 1](/images/Tokmas-CI7N170SM-1.png)
 
@@ -32,7 +32,9 @@ Datasheet excerpts:
 
 The full datasheet is available [here](/pdfs/CI7N170SM.pdf).
 
-In comparison, here is how a professional RF part (MRF300AN) looks like:
+## Comparison
+
+In comparison, here is what a professional RF part (MRF300AN) looks like:
 
 ![MRF300 1](/images/MRF300-1.png)
 

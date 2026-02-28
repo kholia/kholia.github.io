@@ -16,6 +16,8 @@ I found this `60W Electronic Load` to be quite useful for testing small power ad
 
 While it is [possible to homebrew an adjustable electronic load](https://github.com/kholia/Adjustable-Load-v1.1) we recommend getting this electronic load module or a [better-but-costlier one](https://www.toolworld.in/product.php?pid=12296) like the UNI-T UTL8212+ electronic load.
 
+## Observations
+
 You can stress-test power supplies using this electronic load quite easily and conveniently.
 
 It turns out that the `Orange` branded 12V 2A or 3A adapters from Robu are of really poor quality. The output voltage drops to less than 2V when the load current is increased to around 1A. This is NOT the first time that the `Orange` branded stuff has turned out to be of poor quality. In the end, you get what you pay for.

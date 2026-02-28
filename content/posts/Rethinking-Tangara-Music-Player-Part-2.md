@@ -27,9 +27,11 @@ We quickly got this prototype working on a breadboard and discovered some limita
 
 - Perhaps no easy way to get 32-bit 192 kHz files playing
 
-- Limited codec support and no live codec swapping support in https://github.com/earlephilhower/BackgroundAudio library
+- Limited codec support and no live codec swapping support in [BackgroundAudio](https://github.com/earlephilhower/BackgroundAudio) library
 
 We then even briefly considered using a ESP32-WROVER-E-N16R8 module (just like Tangara) to reuse the Tangara's firmware. However, we were NOT very excited about doing that.
+
+## New Direction
 
 Fast forward a few months...
 
@@ -47,11 +49,13 @@ Power source: We will have to use a 2x14500 Li-ion AA batteries it seems (we nee
 
 Note: For the initial version we might NOT need a custom PCB.
 
+## Unknowns
+
 Current unknowns:
 
 - How well does the LicheeRV Nano support the USB DACs?
 
-  ```
+  ```bash
   dhiru@zippy:/data/LicheeSG-Nano-Build
   $ rg USB | grep AUDIO | grep rvnano
   build/boards/sg200x/sg2002_licheervnano_sd/linux/sg2002_licheervnano_sd_defconfig:CONFIG_USB_U_AUDIO=y
@@ -66,9 +70,9 @@ Current unknowns:
 
 - Is there any power management (via frequency scaling) on the LicheeRV Nano board?
 
-  Seems yes, based on a https://community.milkv.io post.
+  Seems yes, based on a [Milk-V Community](https://community.milkv.io) post.
 
-Updated findings:
+## Updated Findings
 
 - LicheeRV Nano supports USB-C DACs pretty well!
 
@@ -76,43 +80,17 @@ Updated findings:
 
 - As usual, `mpd` works just fine and plays 24-bit 192 kHz files just fine.
 
-- https://web.archive.org/web/20220505044524/http://www.2l.no/hires/ and https://www.oppodigital.com/hra/dsd-by-davidelias.aspx are pretty good for getting High-Resolution samples!
+- [2L.no](https://web.archive.org/web/20220505044524/http://www.2l.no/hires/) and [Oppo Digital](https://www.oppodigital.com/hra/dsd-by-davidelias.aspx) are pretty good for getting High-Resolution samples!
 
-- https://github.com/mikebrady/shairport-sync is magical and just works (even without any configuration!). LicheeRV Nano works very well as a `AirPlay 2 Receiver`!
+- [shairport-sync](https://github.com/mikebrady/shairport-sync) is magical and just works (even without any configuration!). LicheeRV Nano works very well as a `AirPlay 2 Receiver`!
 
-- A special shoutout goes to https://github.com/scpcom and other folks for building and maintaining a Linux distribution for LicheeRV Nano devices.
+- A special shoutout goes to [LicheeSG-Nano-Build](https://github.com/scpcom) and other folks for building and maintaining a Linux distribution for LicheeRV Nano devices.
 
-References:
+## Notes
 
-- [Reimagining the 'Tangara' music player - Part 1]({{< relref "Rethinking-Tangara-Music-Player.md" >}})
+I see the `Audiocular D07` DAC in action while playing the FLAC files from [Oppo Digital](https://www.oppodigital.com/hra/dsd-by-davidelias.aspx) webpage.
 
-- https://github.com/scpcom/LicheeSG-Nano-Build/issues/10 (Upstream wishlist of sorts)
-
-- Sansa Clip specs (for reference): Multi-bit Sigma Delta Converters - DAC: 18bit with 94dB SNR ('A' weighted), 2 x 60mW @ 16Ω driver capacity (stereo headphone audio amplifier)
-
-- [Measuring (Tangara's) Audio Quality](https://www.crowdsupply.com/cool-tech-zone/tangara/updates/measuring-tangaras-audio-quality)
-
-- [What Every Audiophile Should Know and Never Forget](https://www.biline.ca/audio_critic/critic1.htm)
-
-- https://github.com/scpcom/LicheeSG-Nano-Build
-
-- https://wiki.sipeed.com/hardware/en/lichee/RV_Nano/1_intro.html
-
-- http://cn.dl.sipeed.com/shareURL/LICHEE/LicheeRV_Nano/01_Specification
-
-- https://cn.dl.sipeed.com/shareURL/LICHEE/LicheeRV_Nano/02_Schematic
-
-- https://github.com/sophgo/sophgo-doc/releases/download/sg2002-trm-v1.02/sg2002_trm_en_v1.02.pdf
-
-- https://www.lcsc.com/datasheet/lcsc_datasheet_2407031102_TMI-TMI7003C_C840566.pdf
-
-- https://www.analog.com/en/products/max97220.html
-
-Notes:
-
-I see the `Audiocular D07` DAC in action while playing the FLAC files from https://www.oppodigital.com/hra/dsd-by-davidelias.aspx webpage.
-
-```
+```bash
 # cat /proc/asound/card0/pcm0p/sub0/hw_params
 access: RW_INTERLEAVED
 format: S24_3LE
@@ -125,7 +103,7 @@ buffer_size: 48000
 
 While playing a DSD64 file from the same webpage, I see:
 
-```
+```bash
 # cat /proc/asound/card0/pcm0p/sub0/hw_params
 access: RW_INTERLEAVED
 format: S24_3LE
@@ -138,7 +116,7 @@ buffer_size: 174762
 
 Nice!
 
-```
+```conf
 # cat /etc/mpd.conf
 #
 # Sample configuration file for mpd
@@ -183,7 +161,7 @@ audio_output {
 
 The following command is quite necessary:
 
-```
+```bash
 ffmpeg -i 04.\ Marooned.m4a -vn 04.\ Marooned.flac
 ```
 
@@ -199,7 +177,7 @@ Update: `@FFmpeg` folks on Twitter kindly pointed out the `--disable-everything`
 
 With `04. Marooned.m4a` (192000 Hz, s32p - 24 bit) track playing,
 
-```
+```bash
 # cat /proc/asound/card0/pcm0p/sub0/hw_params
 access: RW_INTERLEAVED
 format: S32_LE
@@ -216,6 +194,32 @@ Update (22-April-2025): Paul B. Mahol pointed out that `aresample` (as the defau
 
 ![FFmpeg gotchas 2](/images/ffmpeg-gotchas-2.png)
 
-(Screenshot via https://src.infinitewave.ca/)
+(Screenshot via [Infinite Wave](https://src.infinitewave.ca/))
 
 We will be looking into enabling `soxr` based resampling soon (`./configure --enable-libsox`). Next, we need to confirm that `mpd` is using this feature correctly (`-af aresample=resampler=soxr`).
+
+## References
+
+- [Reimagining the 'Tangara' music player - Part 1]({{< relref "Rethinking-Tangara-Music-Player.md" >}})
+
+- [Upstream wishlist](https://github.com/scpcom/LicheeSG-Nano-Build/issues/10)
+
+- Sansa Clip specs (for reference): Multi-bit Sigma Delta Converters - DAC: 18bit with 94dB SNR ('A' weighted), 2 x 60mW @ 16Ω driver capacity (stereo headphone audio amplifier)
+
+- [Measuring (Tangara's) Audio Quality](https://www.crowdsupply.com/cool-tech-zone/tangara/updates/measuring-tangaras-audio-quality)
+
+- [What Every Audiophile Should Know and Never Forget](https://www.biline.ca/audio_critic/critic1.htm)
+
+- [LicheeSG-Nano-Build](https://github.com/scpcom/LicheeSG-Nano-Build)
+
+- [LicheeRV Nano Wiki](https://wiki.sipeed.com/hardware/en/lichee/RV_Nano/1_intro.html)
+
+- [LicheeRV Nano Specification](http://cn.dl.sipeed.com/shareURL/LICHEE/LicheeRV_Nano/01_Specification)
+
+- [LicheeRV Nano Schematic](https://cn.dl.sipeed.com/shareURL/LICHEE/LicheeRV_Nano/02_Schematic)
+
+- [SG2002 TRM](https://github.com/sophgo/sophgo-doc/releases/download/sg2002-trm-v1.02/sg2002_trm_en_v1.02.pdf)
+
+- [TMI7003C Datasheet](https://www.lcsc.com/datasheet/lcsc_datasheet_2407031102_TMI-TMI7003C_C840566.pdf)
+
+- [MAX97220](https://www.analog.com/en/products/max97220.html)

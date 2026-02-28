@@ -13,6 +13,8 @@ tags:
 
 My solar powered WSPR beacon is now active on the 12m band!
 
+## Tech Stack
+
 Tech stack: Navitas 100W Solar Panel, Exide Solar Blitz 40AH battery, Skypearll Solar Charge Controller 30A, 200W 20A DC-DC CC CV Buck module (Robu) - set to output 7.5V, Waveshare ESP32-S3 Zero board, Si5351 with 0.5ppm TCXO, `GSD-Hacks-v5` amplifier, DFRobot Gravity Digital 5A Relay Module
 
 Photos of components involved (for reference):
@@ -20,6 +22,8 @@ Photos of components involved (for reference):
 ![200W CC CV Buck Module](/images/200W-CC-CV-Buck-Module.jpg)
 
 ![New Solar Charge Controller](/images/New-Charge-Controller.jpg)
+
+## Results
 
 First spots:
 
@@ -29,7 +33,7 @@ First spots:
 
 I will work on improving the power efficiency of this system in the coming days - stay tuned for updates...
 
-Next steps:
+## Next Steps
 
 - Enable TX'ing on different bands (17-15-12-10). Antenna plans: Multi-band vertical antenna (`17-Five`?) with `ATU-10` automatic antenna tuner.
 
@@ -37,10 +41,10 @@ Next steps:
 
 - TX every 10 minutes during daytime. TX every hour during night-time.
 
-References:
+## References
 
-- https://github.com/kholia/HF-PA-v10/tree/master/GSD-Hacks-v5
+- [GSD-Hacks-v5](https://github.com/kholia/HF-PA-v10/tree/master/GSD-Hacks-v5)
 
-- https://github.com/kholia/Si5351-Module-Clone-TCXO
+- [Si5351-Module-Clone-TCXO](https://github.com/kholia/Si5351-Module-Clone-TCXO)
 
-- https://github.com/kholia/Multi-WSPR/tree/master/Tightest-WSPR-v2
+- [Tightest-WSPR-v2](https://github.com/kholia/Multi-WSPR/tree/master/Tightest-WSPR-v2)

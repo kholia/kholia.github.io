@@ -11,6 +11,8 @@ tags:
 
 I am a bit late to realize that Ubuntu is going downhill and has been for a while.
 
+## Why?
+
 Here are a couple of things I have noticed about Canonical/Ubuntu:
 
 - Forced paid updates even for `active life` OS versions
@@ -24,6 +26,8 @@ Here are a couple of things I have noticed about Canonical/Ubuntu:
 - [Often poor quality of security updates](https://github.com/json-c/json-c/issues/103) - A userspace patch causing kernel crashes! Ubuntu's security updates were also responsible for the [$5M outage at Datadog](https://newsletter.pragmaticengineer.com/p/inside-the-datadog-outage) it seems.
 
 - Ubuntu is bloated (try running it on Raspberry Pi Zero 2W) compared to Alpine Linux (as of 2025)
+
+## Alternatives
 
 I haven't distro-hopped in more than a decade but I am forced to now. After using `MX Linux - Xfce` for a few weeks, I might try running `Debian Sid`!
 

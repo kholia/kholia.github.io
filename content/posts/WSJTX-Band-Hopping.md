@@ -10,9 +10,12 @@ tags:
 - Amateur Radio
 - WSJT-X
 - Band Hopping
+- wsjt-x_improved
 ---
 
 WSJT-X 3.x has inbuilt support for band hopping!
+
+## Results
 
 ![Band hopping in action](/images/WSJTX-Band-Hopping.png)
 
@@ -24,8 +27,8 @@ RX results from an experimental version of DDX:
 
 This is super useful for monitoring FT8 traffic on multiple bands.
 
-References:
+## References
 
-- https://github.com/kholia/libmirisdr-5
+- [libmirisdr-5](https://github.com/kholia/libmirisdr-5)
 
-- https://sourceforge.net/projects/wsjt-x-improved/files/
+- [WSJT-X Improved](https://sourceforge.net/projects/wsjt-x-improved/files/)

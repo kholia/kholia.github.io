@@ -29,6 +29,8 @@ For HF and amateur VHF bands our [WiFi VFO]({{< relref "WiFi-VFO.md" >}}) works 
 
 But we didn't have a cost-effective UHF signal source until now...
 
+## Design
+
 Thanks to Ismo (OH2FTG), we recently experimented with a HopeRF CMT2119A powered board called `HOPERF RF module RFM119W-433S1`.
 
 Here is the CMT2119A powered board in action producing a CW (OOK) signal at ~433 MHz.
@@ -45,9 +47,11 @@ The official RFPDK software is pretty easy to use and runs fine without the exte
 
 Future work: Create a 5W UHF RF amplifier for fun and learning purposes!
 
+## Software
+
 Here is the MCU code targeting Raspberry Pi Pico using the `arduino-pico` framework:
 
-```C
+```c
 /*
  * CMT2119A OOK CW Transmitter
  *

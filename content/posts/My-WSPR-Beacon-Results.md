@@ -26,9 +26,9 @@ Our article on this beacon's design and operation will appear in the May/June 20
 
 ![WSPR Beacon Results 5](/images/WSPR-Results-2025-2.png)
 
-References:
+## References
 
-- http://www.carnut.info/WSPR_Tx/WSPR_Tx.htm
+- [WSPR TX by G0UPL](http://www.carnut.info/WSPR_Tx/WSPR_Tx.htm)
 
 - [QEX May-June 2025 TOC](/pdfs/QEX-May-June-2025-TOC.pdf)
 

@@ -17,13 +17,17 @@ tags:
 
 I recently found some FET gate drivers which are quite fast!
 
+## The Drivers
+
 - [Wuxi Maxinmicro MX1025D](https://www.lcsc.com/product-detail/GaN-Transistors-GaN-HEMT_Wuxi-Maxinmicro-MX1025D_C5341121.html) - Favorite!
 
 - BD2311NVX-LBE2 from ROHM Semiconductor
 
 - [TI LMG1020](https://www.ti.com/lit/ds/symlink/lmg1020.pdf)
 
-- Tokmas LMG1020YFFR - https://www.lcsc.com/product-detail/C6423790.html
+- [Tokmas LMG1020YFFR](https://www.lcsc.com/product-detail/C6423790.html)
+
+## Usage
 
 They are perfect for driving the fast Tokmas GaN FETs that we recently discussed on this site.
 
@@ -31,6 +35,6 @@ Our 'workhorse' gate driver for the recent experiments has been the Onsemi's NCP
 
 And we have shifted to `MX1025D` gate driver in our latest amplifier designs.
 
-References:
+## References
 
-- https://github.com/westonb/Plasma-Driver
+- [Plasma-Driver](https://github.com/westonb/Plasma-Driver)

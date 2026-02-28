@@ -12,11 +12,15 @@ tags:
 
 I am building an easy-to-use and cost-effective WSPR pHAT for Raspberry Pi Zero 2 W.
 
+## Design
+
 3D render:
 
-![250mW WSPR Beacon](/images/WSPR-Beacon-250mW.png)
+![250mW WSPR Beacon Render](/images/WSPR-Beacon-250mW.png)
 
 We have replaced the traditional expensive Mini-Circuits transformer with a cost-effective Bourns coupled inductor.
+
+## Status
 
 Results: To be built and tested soon!
 

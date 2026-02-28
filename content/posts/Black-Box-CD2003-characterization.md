@@ -22,19 +22,21 @@ Antenna: Small jumper cable attached
 
 ![DDX-Commercial-7](/images/DDX-Commercial-7.png)
 
+## Initial Results
+
 10m: 36 dB on WSJT-X audio meter, on quiet and also with nearby beacon on !!!
 
 12m: 36 dB on audio meter, on quiet and also with nearby beacon on !!!
 
 15m: 46 dB on audio meter on quiet, 65 dB with nearby beacon on - OK
 
-20m: 44 dB on quiet,  65 dB with beacon on - OK 
+20m: 44 dB on quiet,  65 dB with beacon on - OK
 
 40m: 40 dB on quiet, 60 dB with beacon on - OK
 
-Next:
+## LNA Tests
 
-Same jumper antenna -> 20 dB LNA (Zeenko BM) -> 10 dB ATTN -> Same RX circuit as before
+Setup: Same jumper antenna ➔ 20 dB LNA (Zeenko BM) ➔ 10 dB ATTN ➔ Same RX circuit as before
 
 10m: 47 dB on audio meter on quiet, 63 dB with beacon on. SnR is much improved (checked on WSJT-X spectrum and FT8 decodes).
 
@@ -42,11 +44,15 @@ Same jumper antenna -> 20 dB LNA (Zeenko BM) -> 10 dB ATTN -> Same RX circuit as
 
 40m: 54 dB on quiet - OK, frontend running hot?
 
+## Findings
+
 Finding 1: 10 dB gain works better than 20 dB gain on 10m. Too much gain can be problematic!
 
 With actual 5m EFHW antenna attached: Audio meter is near 60 dB on 10m - great!
 
 Conclusion: We need to fix the RF gain problem on 12m and 10m bands.
+
+## Visuals
 
 With `Zeenko BM` LNA added:
 

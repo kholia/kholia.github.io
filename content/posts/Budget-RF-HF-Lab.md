@@ -12,6 +12,6 @@ tags:
 
 Bharath and I have written our thoughts on building an RF lab on a budget. It is geared towards homebrewers and new amateur radio operators.
 
-[We maintain this documentation here](https://github.com/kholia/Budget-RF-Lab/blob/master/README.md).
+[Budget RF Lab Documentation](https://github.com/kholia/Budget-RF-Lab/blob/master/README.md).
 
 Have fun! :-)

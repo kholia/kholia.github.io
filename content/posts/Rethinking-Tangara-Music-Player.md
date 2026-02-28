@@ -21,6 +21,8 @@ tags:
 
 It has inspired us to build a similar FOSS DAP product but at a much lower cost of 40 USD (that being the launch price of Sansa Clip in year 2007). The idea is to deliver '90% of the value' of Tangara in a slightly smaller (but fatter) and more cost-effective package.
 
+## Design
+
 Initial tech stack: RP2350-Zero, PCM5102A 32-bit 384kHz DAC, Burr-Brown OPA1662 (specified for 3.3v) as the unity gain buffer and headphone driver, no explicit DC-DC converters anywhere, microSD card, everything will be a module if possible
 
 Keywords: Mindful, Repairable, Sustainable, Minimal, Hand solderable, Retro-Modern, Hackability
@@ -33,9 +35,11 @@ We are likely to optimize the default performance for IEMs like Aria 2 (~33Ω). 
 
 Power source: We would like to use 14500 Li-ion AA battery, ideally. Cheap, readily available and easy to self-replace. The standard `AA` size won us over!
 
+## Implementation
+
 Initial impressions with `Alone With You - deadmau5` test track:
 
-- CJMCU-4344 DAC module + TS922 -> Fidelio X2. The 'rumbling bass' on this track seems to be much attenuated as compared to FiiO X3-II. Update: This was a bug in the selection of the output DC blocking capacitors values! `10uF` with a ~32 ohms load forms a HPF with a cutoff of almost 500 Hz (heh)! Switching the DC blocking caps to `>= 680uF` fixes the low-bass problem!
+- CJMCU-4344 DAC module + TS922 ➔ Fidelio X2. The 'rumbling bass' on this track seems to be much attenuated as compared to FiiO X3-II. Update: This was a bug in the selection of the output DC blocking capacitors values! `10uF` with a ~32 ohms load forms a HPF with a cutoff of almost 500 Hz (heh)! Switching the DC blocking caps to `>= 680uF` fixes the low-bass problem!
 
 While the `CJMCU-4344 DAC module` work pretty well, the underlying CS4344 chip has been discontinued by Cirrus Logic. We now use TI PCM5102A DAC module and it works even better it seems. TI TAD5242 (DAC with headphone driver) sounds amazing too but its QFN package can be problematic! For now TI PCM5102A serves us well and seems to "beat" WM8523 on paper.
 
@@ -57,7 +61,7 @@ Here is how an early PCB render is looking:
 
 Our WIP design files are [available on GitHub](https://github.com/kholia/mShuffle).
 
-References:
+## References
 
 - Sansa Clip specs (for reference): Multi-bit Sigma Delta Converters - DAC: 18bit with 94dB SNR ('A' weighted), 2 x 60mW @ 16Ω driver capacity (stereo headphone audio amplifier)
 
