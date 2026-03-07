@@ -14,7 +14,7 @@ tags:
 - "Science"
 - Fast Compute
 - Compute
-- WSJTX-X
+- WSJT-X
 - MSHV
 ---
 
@@ -99,9 +99,11 @@ user	0m0.019s
 sys	0m0.009s
 ```
 
-Update (October-2025): With the latest `ft8_lib_mashup` code:
+## Updates
 
-```
+**Update (October-2025):** With the latest `ft8_lib_mashup` code:
+
+```bash
 user@system:~/repos/ft8_lib_mashup$ time ./decode_ft8 test/wav/20m_busy/test_01.wav
 Sample rate 12000 Hz, 180000 samples, 15.000 seconds
 Block size = 1920
@@ -112,25 +114,7 @@ Max magnitude: -19.1 dB
 000000 -06.0 +1.52 2138 ~  LZ365BM <...> 73
 000000 -05.2 +1.48 1369 ~  CQ OK6LZ JN99
 000000 -05.0 +1.52 1512 ~  JO1COV DL4SBF 73
-000000 -03.1 +1.60  709 ~  CQ IK4LZH JN54
-000000 -08.9 +1.60  825 ~  LY2EW DL1KDA RR73
-000000 -06.5 +1.48 2328 ~  CQ R8AU MO05
-000000 -07.6 +1.44  891 ~  SA5QED IQ5PJ 73
-000000 -07.5 -0.40 2378 ~  R1CBP SP9LKP RR73
-000000 -09.0 +1.44 2691 ~  CQ OE8GMQ JN66
-000000 -07.9 +1.76 1291 ~  EA9ACD HA5LGO -13
-000000 -08.2 +1.52 1125 ~  CQ HB9CUZ JN47
-000000 -09.6 +1.56  559 ~  OE3MLC G3ZQQ 73
-000000 -09.5 +1.48  338 ~  JO1COV PE1OYB JO21
-000000 -08.0 +1.76 1566 ~  JI1TYA DH1NAS 73
-000000 -08.3 +2.60  772 ~  JA1FWS OK2BV JN89
-000000 -09.4 +1.32  956 ~  CQ IU8DMZ JN70
-000000 -13.0 +2.44 1450 ~  CQ RX3ASQ KO95
-000000 -06.3 +1.84 2278 ~  PY2DPM ON6UF RR73
-000000 -09.3 +1.52 1156 ~  CQ HA1BF JN86
-000000 -11.5 +1.64  772 ~  JA1FWS HA7CH JN97
-000000 -11.4 +1.40 1616 ~  JO1COV PA0CAH JO21
-000000 -06.4 +2.32 2391 ~  CQ E75C JN93
+...
 Decoded 22 messages, callsign hashtable size 31
 
 real    0m0.177s
@@ -140,14 +124,12 @@ sys     0m0.006s
 
 Not bad - This will power the `FT8 Radio` app soon!
 
-References:
+## References
 
-- https://github.com/kholia/SDRPlusPlusBrown/
+- [SDRPlusPlusBrown Source](https://github.com/kholia/SDRPlusPlusBrown/)
 
-- https://github.com/sannysanoff/SDRPlusPlusBrown
+- [WSJT-X Improved](https://sourceforge.net/projects/wsjt-x-improved/)
 
-- https://sourceforge.net/projects/wsjt-x-improved/
+- [Digital Radio Receiver App](https://play.google.com/store/apps/details?id=com.bunzee.digitalradioreceiver)
 
-- https://play.google.com/store/apps/details?id=com.bunzee.digitalradioreceiver
-
-- https://play.google.com/store/apps/details?id=com.bunzee.ft8radio
+- [FT8 Radio App](https://play.google.com/store/apps/details?id=com.bunzee.ft8radio)

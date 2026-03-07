@@ -20,7 +20,7 @@ tags:
 - Beacon
 ---
 
-We make heavy use of https://github.com/kholia/Easy-Digital-Beacons-v1 for testing RF amplifiers.
+We make heavy use of [Easy-Digital-Beacons-v1](https://github.com/kholia/Easy-Digital-Beacons-v1) for testing RF amplifiers.
 
 This single board is a versatile WiFi VFO and FT8 / FT4 / WSPR beacon.
 
