@@ -2,20 +2,21 @@
 title: "Easy reproducible LPF filters"
 date: 2025-11-01
 tags:
-- RF Hacking
-- HAM
-- Amateur Radio
 - 25W
+- DE-5000
 - LPFs
 - LPF
-- RF filters
+- RF Filters
 - Filters
 - LCR
-- DE-5000
 - Elsie
+- RF Hacking
+- Amateur Radio
 ---
 
 Here is the schematic for a standard 50Ω LPF for the 12-11-10m bands.
+
+## Designs
 
 ![LPF Schematic 3](/images/LPF-Schematic-1.png)
 
@@ -25,17 +26,19 @@ PCB Render:
 
 Actual photo:
 
-![LPF Render](/images/LPF-Photo-1.jpg)
+![LPF Board Photo](/images/LPF-Photo-1.jpg)
+
+## Performance
 
 NanoVNA results of the PCB build:
 
-![LPF NanoVNA](/images/LPF-NanoVNA-1.png)
+![LPF NanoVNA Result 1](/images/LPF-NanoVNA-1.png)
 
-![LPF NanoVNA](/images/LPF-NanoVNA-2.png)
+![LPF NanoVNA Result 2](/images/LPF-NanoVNA-2.png)
 
-Build Notes:
+## Build Notes
 
-```
+```text
 These values come from RobG (https://hackaday.io/)
 
 Shunt C: 100pF
@@ -63,7 +66,9 @@ Cost: Less than 500 INR per filter!
 
 Time to build: Less than 30 minutes per filter
 
-Tested input power: 5W to 10W. Can handle 25W to 30W it seems.
+Tested input power: 5W to 10W. It appears to handle 25W to 30W.
+
+## Other Bands
 
 LPF for the 40-30m bands:
 
@@ -75,8 +80,16 @@ LPF for the 20-17-15m bands:
 
 Note: We had to push the cutoff frequency to 25 MHz to get commercially-viable (available) high-voltage C0G caps.
 
-References:
+Alternate LPF for the 20-17-15m bands:
 
-- https://toroids.info/T50-6.php
+![LPF MB Schematic](/images/LPF-MB-Design.png)
 
-- https://markimicrowave.com/technical-resources/tools/lc-filter-design-tool/
+![LPF MB Response](/images/LPF-MB-Response.png)
+
+## References
+
+- [T50-6 Info](https://toroids.info/T50-6.php)
+
+- [T50-2 Info](https://toroids.info/T50-2.php)
+
+- [Marki Microwave Filter Design Tool](https://markimicrowave.com/technical-resources/tools/lc-filter-design-tool/)

@@ -2,14 +2,14 @@
 title: "Ubuntu Going Downhill"
 date: 2025-02-09
 tags:
-- Technology
 - Linux
 - Ubuntu
-- Sad
-- Downhill
+- Technology
 ---
 
-I am a bit late to realize that Ubuntu is going downhill and has been for a while.
+I was a bit late in realizing that Ubuntu has been going downhill for a while.
+
+## Why?
 
 Here are a couple of things I have noticed about Canonical/Ubuntu:
 
@@ -25,6 +25,9 @@ Here are a couple of things I have noticed about Canonical/Ubuntu:
 
 - Ubuntu is bloated (try running it on Raspberry Pi Zero 2W) compared to Alpine Linux (as of 2025)
 
-I haven't distro-hopped in more than a decade but I am forced to now. After using `MX Linux - Xfce` for a few weeks, I might try running `Debian Sid`!
+## Alternatives
+
+I haven't distro-hopped in more than a decade, but I feel forced to now. After
+using `MX Linux - Xfce` for a few weeks, I may try `Debian Sid`.
 
 I found this ['I'm done with Ubuntu'](https://ounapuu.ee/posts/2025/02/05/done-with-ubuntu/) article quite an interesting read as well.
