@@ -2,19 +2,14 @@
 title: "The (now) poor quality, reliability and longevity of Luminous products"
 date: 2025-10-18
 tags:
-- Technology
 - Luminous
-- Sad
-- Downhill
 - Poor Quality
-- Experience
 - Longevity
 - Inverters
 - Power Backup
 - Zelio
 - Microtek
-- Brand Loyalty
-- Lost Brand Loyalty
+- Technology
 ---
 
 My old Luminous Zelio inverter (bought in ~2013) lasted for close to 8 years.

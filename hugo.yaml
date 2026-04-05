@@ -2,7 +2,7 @@ baseURL: https://rfcorner.in/
 languageCode: en-us
 title: Dhiru's Notebook
 theme: ["hugo-embed-pdf-shortcode", "PaperMod"]
-sectionPagesMenu: main
+# sectionPagesMenu: main
 enableRobotsTXT: true
 minify:
   disableXML: false
@@ -14,7 +14,7 @@ security:
 params:
   env: production # to enable google analytics, opengraph, twitter-cards and schema.
   title: Dhiru's Notebook
-  description: "Dhiru's Solar Notebook"
+  description: "Dhiru's Notebook"
   keywords: [Blog, Portfolio, Dhiru, Kholia, Dhiru Kholia, Notebook, RF, Hacking, Security]
   author: Dhiru Kholia
   defaultTheme: auto # dark, light
@@ -68,10 +68,18 @@ params:
     keys: ["title", "permalink", "summary", "content"]
 menu:
   main:
+    - identifier: posts
+      name: Posts
+      url: /posts/
+      weight: 10
     - identifier: tags
       name: Tags
       url: /tags/
       weight: 20
+    - identifier: about
+      name: About
+      url: /about/
+      weight: 30
 # Read: https://github.com/adityatelange/hugo-PaperMod/wiki/FAQs#using-hugos-syntax-highlighter-chroma
 pygmentsUseClasses: true
 markup:
