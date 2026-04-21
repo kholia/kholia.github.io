@@ -2,21 +2,21 @@
 title: "Success with 2m WSPR!"
 date: 2025-09-25
 tags:
-- Higher bands
-- 2m
 - VHF
-- WSPRing
-- WSPR'ing
-- RF Hacking
-- HAM
-- Amateur Radio
 - WSPR
+- Beacon
+- 2m
 - 144 MHz
+- Higher Bands
 - VHF WSPR
 - Success Story
+- RF Hacking
+- Amateur Radio
 ---
 
 OCXO's are awesome - this is what I learned while trying to get WSPR working reliably on the 2m band.
+
+## Hardware
 
 Here is all you need for reliable WSPR'ing on the 2m band:
 
@@ -26,11 +26,13 @@ A RAW OCXO "can" works fine too!
 
 ![Modded Si5351 board](/images/si5351-board-modified.jpg)
 
-Note: This modded Si5351 board image comes from https://www.simonsdialogs.com site. Essentially we are modding the CLK2 output port to become an input port which accepts the OCXO's output signal.
+Note: This modified Si5351 board image comes from [SimonsDialogs](https://www.simonsdialogs.com). Essentially, we modify the CLK2 output port to become an input port that accepts the OCXO's output signal.
 
 I didn't find modding the Si5351 board to be that easy - I had to bump the hot air workstation's temperature to 490 degrees (?!) to desolder the existing onboard quartz crystal. Designing a new, small PCB to put the OCXO and Si5351 together might be a good idea!
 
-Note 2: I have connected a 6dB attenuator between the RAW output of the OCXO and the `XA` input pin of the Si5351 IC as I was not sure about the signal levels involved.
+Note 2: I connected a 6dB attenuator between the RAW output of the OCXO and
+the `XA` input pin of the Si5351 IC because I was not sure about the signal
+levels involved.
 
 Demo screenshot:
 
@@ -44,9 +46,11 @@ Now the 2m WSPR decodes aren't affected by the fan running, open windows with ch
 
 Next challenge: Get WSPR to work on UHF (~433 MHz band). Oh, we also need to figure out a low-cost, non-linear VHF amplifier chain.
 
+## Code
+
 Sample code:
 
-```c
+```cpp
 // Runs on Raspberry Pi Pico (and 2). WSPR timing is done manually ;)
 
 #include <Wire.h>

@@ -1,17 +1,17 @@
 ---
-title: "Headless WSPR Monitoring System (2025)"
+title: "Headless WSPR Monitoring System (2026)"
 date: 2025-10-22
 tags:
-- RF Hacking
 - WSPR
-- HAM
-- Amateur Radio
-- Airspy
 - HF
+- Raspberry Pi
+- FT8
+- Active Antenna
+- Airspy
 - HF+ Discovery
 - Monitoring
-- RPi
-- Raspberry Pi
+- RF Hacking
+- Amateur Radio
 ---
 
 ### Setup OS and SDR
@@ -22,17 +22,26 @@ Using a Raspberry Pi (<=3) is NOT recommended as it has quite a bit of power
 supply noise on the USB ports, which reduces the performance of the connected
 SDR.
 
+```
+user@rpi:/etc$ cat /etc/os-release
+PRETTY_NAME="Debian GNU/Linux 13 (trixie)"
+NAME="Debian GNU/Linux"
+VERSION_ID="13"
+...
+```
+
 Install dependencies:
 
-```
+```bash
 sudo apt-get update
 
 sudo apt-get install airspyhf \
   soapysdr-tools sox libsox-fmt-all wsjtx \
-  pulseaudio-utils git vim fluxbox xterm tightvncserver
+  pulseaudio-utils git vim fluxbox xterm tightvncserver \
+  libqt5websockets5 cmake build-essential
 ```
 
-```
+```bash
 sudo apt-get install cmake pkg-config \
     libusb-1.0-0-dev \
     libasound2-dev \
@@ -46,7 +55,7 @@ sudo apt-get install cmake pkg-config \
 
 Build `airspyhf-fmradion` SDR software:
 
-```
+```bash
 cd ~
 
 git clone --recursive https://github.com/jj1bdx/airspy-fmradion.git
@@ -58,21 +67,19 @@ cmake .
 make -j8
 ```
 
-Optional: Install https://tailscale.com/ on the RPi.
+Optional: Install [Tailscale](https://tailscale.com/) on the RPi.
 
-Recommended: Use a `RF clipper` for protecting the SDR - see https://www.kk5jy.net/rf-clipper/ for details.
+Recommended: Use a `RF clipper` for protecting the SDR - see [RF Clipper](https://www.kk5jy.net/rf-clipper/) for details.
 
 Antenna: See [My PA0FRI Active Antenna article]({{< relref "Active-Antenna-PA0FRI-Results.md" >}}) for details on the "best" antenna for RX purposes.
 
 Setup: Active antenna ➔ 20 meter BPF ➔ RF limiter ➔ SDR
 
-Tips
-
-- Check time sync on RPi using the `timedatectl show-timesync` command
+**Tips:** Check time sync on RPi using the `timedatectl show-timesync` command
 
 ### Setup Headless Hopping Skimmer
 
-```
+```bash
 $ vim  ~/.asoundrc
 pcm.!default {
         type hw
@@ -149,25 +156,27 @@ export XKL_XMODMAP_DISABLE=1
 /etc/X11/Xsession
 ```
 
-```
+```bash
 chmod +x ~/.vnc/xstartup
 ```
 
 Set up the VNC password (once):
 
-```
+```bash
 vncpasswd
 ```
 
 In WSJT-X do the following:
 
-```
+```text
 File > Settings > Audio, Input Set to "plughw:CARD=Loopback,DEV=1", "Left"
 ```
 
-```
+```text
 File > Settings > Audio, Output Set to "plughw:CARD=Loopback_1,DEV=0", "Both"
 ```
+
+Note: Turn off `logging` and `saving` in WSJT-X options (optional).
 
 ### It works!
 
@@ -181,12 +190,16 @@ File > Settings > Audio, Output Set to "plughw:CARD=Loopback_1,DEV=0", "Both"
 
 ### References
 
+- [WSJT-X Improved](https://sourceforge.net/projects/wsjt-x-improved/files/WSJT-X_v3.1.0/Raspberry%20Pi/)
+
 - [My PA0FRI Active Antenna article]({{< relref "Active-Antenna-PA0FRI-Results.md" >}})
 
 - [RSP1 Clone Notes]({{< relref "RSP1-Clone-Notes.md" >}})
 
-- https://github.com/kholia/airspy-utils
+- [Airspy Utils](https://github.com/kholia/airspy-utils)
 
-- https://wspr.rocks/
+- [WSPR Rocks](https://wspr.rocks/)
 
-- https://www.kk5jy.net/rf-clipper/
+- [RF Clipper](https://www.kk5jy.net/rf-clipper/)
+
+- <https://github.com/azlux/log2ram> - Highly recommended

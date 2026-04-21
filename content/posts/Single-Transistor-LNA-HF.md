@@ -2,16 +2,9 @@
 title: "Single Transistor LNA for HF"
 date: 2025-09-21
 tags:
-- RF Hacking
-- RF
-- LNA 
-- Characterization
+- LNA
 - HF
 - Shortwave
-- RX
-- Small-signal
-- Amp
-- Amplifier
 - S9018
 - KSP10
 - MMBTH10LT1G
@@ -23,7 +16,12 @@ tags:
 
 Note: This HF LNA design is inspired by Charlie Morris ZL2CTM's prior work.
 
-The idea that a single-transistor-preamp with 10 dB gain is more than enough for HF comes from Gajendra Kumar (VU2BGS). As a new "designer" I am often overwhelmed by the different possible design paths - so having guidance from an `elmer` becomes crucial.
+## Design
+
+The idea that a single-transistor preamp with 10 dB gain is more than enough
+for HF comes from Gajendra Kumar (VU2BGS). As a new "designer," I am often
+overwhelmed by the different possible design paths, so guidance from an
+`elmer` is crucial.
 
 ![HF LNA 1](/images/HF-LNA-1.png)
 
@@ -45,13 +43,18 @@ With onsemi part:
 
 So which transistor model is more accurate? ;)
 
-It is a pleasure to work with `onsemi's` .lib spice models - they are usable right away!
+It is a pleasure to work with `onsemi` .lib SPICE models; they are usable out
+of the box.
 
 This LNA will be used in the RX path of the `DDX Commercial` series of transceivers soon!
 
-Simulation files: https://github.com/kholia/Gain-Blocks-LTspice/tree/main/HF-LNA
+## Simulation
+
+Simulation files: [Gain-Blocks-LTspice](https://github.com/kholia/Gain-Blocks-LTspice/tree/main/HF-LNA)
 
 Please always publish your simulation files ;)
+
+## Updates
 
 Updates (October-2025):
 
@@ -69,10 +72,9 @@ As you can see, NXP's transistor model is pretty decent and mimics reality well!
 
 NanoVNA setup notes:
 
-Input ATTN: 30dB (Port 1 of NanoVNA)
+- Input ATTN: 30dB (Port 1 of NanoVNA)
+- Output ATTN: 33dB (Port 2 of NanoVNA)
 
-Output ATTN: 33dB (Port 2 of NanoVNA)
+## References
 
-References:
-
-- https://www.qsl.net/py2ohh/trx/buffer/buffer.html
+- [PY2OHH Buffer/Amplifier](https://www.qsl.net/py2ohh/trx/buffer/buffer.html)

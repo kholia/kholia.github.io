@@ -1,13 +1,13 @@
 ---
-title: "Testing small power supplies"
+title: "Testing Small Power Supplies"
 date: 2025-02-18
 tags:
 - Electronics
-- Power Supplies
-- Load testing
+- Power Supply
+- Load Testing
 - HAM
 - Testing
-- Trust but verify
+- Trust but Verify
 ---
 
 I found this `60W Electronic Load` to be quite useful for testing small power adapters and supplies.
@@ -15,6 +15,8 @@ I found this `60W Electronic Load` to be quite useful for testing small power ad
 ![Small Electronic Load](/images/Electronic-Load-Small.jpg)
 
 While it is [possible to homebrew an adjustable electronic load](https://github.com/kholia/Adjustable-Load-v1.1) we recommend getting this electronic load module or a [better-but-costlier one](https://www.toolworld.in/product.php?pid=12296) like the UNI-T UTL8212+ electronic load.
+
+## Observations
 
 You can stress-test power supplies using this electronic load quite easily and conveniently.
 
@@ -30,4 +32,5 @@ Robu's newer 2025 `Pro-Range` branded power adapters fared much better in my tes
 
 ![Sample Pro-Range Adapter](/images/Pro-Range-Adapter.jpg)
 
-Update: The `Pro-Range` branded power adapters are able to supply the specified power but are still pretty `noisy` it seems!
+Update: The `Pro-Range` branded power adapters can supply the specified power,
+but they still seem quite `noisy`.
