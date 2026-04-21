@@ -2,10 +2,9 @@
 title: "Easy WSPR Encoder"
 date: 2025-02-14
 tags:
-- RF Hacking
-- HAM
-- Amateur Radio
 - WSPR
+- RF Hacking
+- Amateur Radio
 ---
 
 The `Easy WSPR Encoder` can be accessed [here](/wspr_encoder.html).
