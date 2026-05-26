@@ -2,16 +2,14 @@
 title: Easily verifying certificate chains
 date: 2025-04-14
 tags:
-- CS
 - Computer Science
 - Security
-- Self-Note
 - Notes
 ---
 
 Here is a quick script to verify that the certificate chain is valid and will work.
 
-```
+```bash
 % cat verify-cert-key.sh
 #!/usr/bin/env bash
 

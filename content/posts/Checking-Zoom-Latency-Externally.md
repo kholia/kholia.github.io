@@ -2,13 +2,13 @@
 title: "Checking Zoom latency externally"
 date: 2025-08-08
 tags:
-- Hacking
 - Zoom
 - Latency
 - Call Quality
 - Microsoft Teams
 - Teams Latency
 - Teams
+- Hacking
 ---
 
 Here is a handy script that I often use to check the quality of the Zoom connection. It measures `TCP latency` instead of the usual ICMP stuff (which is often blocked).
@@ -18,7 +18,7 @@ Here is a handy script that I often use to check the quality of the Zoom connect
 """
 TCP Ping Test (defaults to port 80, 10000 packets)
 
-Usage: ./tcpping.py host [port] [maxCount]
+Usage: ./tcp_ping_grapher.py host [port] [maxCount]
 - Ctrl-C Exits with Results
 """
 

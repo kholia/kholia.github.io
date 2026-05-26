@@ -1,19 +1,20 @@
 ---
-title: "Choosing a coax for HF field operations"
+title: "Choosing a Coax for HF Field Operations"
 date: 2025-11-05
 tags:
+- Beacon
 - Coax
-- RF Hacking
-- HAM
-- Amateur Radio
 - SOTA
 - POTA
 - FieldOps
 - Portability
-- Hard Choices
+- RF Hacking
+- Amateur Radio
 ---
 
-Setup: Si5351 RF generator (@ 28 MHz) ➔ GSD-Hacks-v5 ➔ 7th order LPF ➔ {COAX-UNDER-TEST} ➔ Digital RF power meter ➔ Dummy load
+Setup: Si5351 RF generator (@ 28 MHz) ➔ GSD-Hacks-v5 digital amplifier ➔ 7th order LPF ➔ {COAX-UNDER-TEST} ➔ Digital RF power meter ➔ Dummy load
+
+## Results
 
 Results at 13.8V drain:
 
@@ -31,16 +32,21 @@ Results at 15V drain:
 | RG-316 (7 meters) | 4.7W |
 | RG-188 (7 meters) | 4.7W |
 
-These measurement results seem to match the ones from `Eric, WD8RIF`.
+These measurements appear to match those from `Eric, WD8RIF`.
+
+## Conclusion
 
 For ultra-portable HF field operations (POTA / SOTA / others), carrying a roll of RG-58 coax can be challenging.
 
-Using RG-316 (light but a little stiff) and RG-188 (flexible and lightweight) for bicycle-portable or man-portable operations can be a decent option if we are willing to tolerate some RF power losses.
+Using RG-316 (light but a little stiff) and RG-188 (flexible and lightweight)
+for bicycle-portable or man-portable operations can be a good option if we are
+willing to tolerate some RF power loss.
 
-Also, RG-58 with PL-259 connectors is pretty mechanically rugged in comparison against RG-316 and RG-188 - another factor to keep in mind.
+Also, RG-58 with PL-259 connectors is mechanically more rugged than RG-316 and
+RG-188, which is another factor to keep in mind.
 
-References: 
+## References
 
-- https://github.com/kholia/HF-PA-v10/tree/master/GSD-Hacks-v5
+- [GSD-Hacks-v5](https://github.com/kholia/HF-PA-v10/tree/master/GSD-Hacks-v5)
 
-- https://github.com/kholia/Easy-Digital-Beacons-v1
+- [Easy-Digital-Beacons-v1](https://github.com/kholia/Easy-Digital-Beacons-v1)
