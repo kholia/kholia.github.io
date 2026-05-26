@@ -1,17 +1,13 @@
-/* Custom styles added to demo */
-
-.twitter-tweet {
-    margin: auto;
+@font-face {
+  font-family: 'Ubuntu Mono';
+  src: url('../../fonts/UbuntuSansMono-Regular.woff2') format('woff2'),
+       url('../../fonts/UbuntuSansMono-Regular.woff') format('woff'),
+       url('../../fonts/UbuntuSansMono-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
 }
 
-iframe {
-    border-radius: var(--radius) !important;
-}
-
-.home-info ul {
-    padding-inline-start: 20px;
-}
-
-.entry-cover img {
-    border: 1px solid var(--border);
+.post-content pre, code {
+    font-family: 'Ubuntu Mono', monospace;
+    max-height: 40rem;
 }
