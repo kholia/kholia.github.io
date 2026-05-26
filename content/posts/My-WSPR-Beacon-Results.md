@@ -2,14 +2,13 @@
 title: "My WSPR beacon results - April 2025"
 date: 2025-04-10
 tags:
-- RF Hacking
-- HAM
-- Amateur Radio
 - WSPR
-- Amplifier
 - Beacon
 - RF Amplifier
+- Amplifier
 - Digital Modes
+- RF Hacking
+- Amateur Radio
 ---
 
 This ~1W to ~5W WSPR beacon runs continuously on the 10m band. It handles extreme environmental temperatures pretty well (it is 42°C plus here).
@@ -26,9 +25,9 @@ Our article on this beacon's design and operation will appear in the May/June 20
 
 ![WSPR Beacon Results 5](/images/WSPR-Results-2025-2.png)
 
-References:
+## References
 
-- http://www.carnut.info/WSPR_Tx/WSPR_Tx.htm
+- [WSPR TX by G0UPL](http://www.carnut.info/WSPR_Tx/WSPR_Tx.htm)
 
 - [QEX May-June 2025 TOC](/pdfs/QEX-May-June-2025-TOC.pdf)
 

@@ -2,26 +2,16 @@
 title: "A Sustainable Radio Design?"
 date: 2025-10-17
 tags:
-- RF Hacking
-- RF
 - CD2003
 - MC1496
-- Not-DCR
-- Real World Constraints
 - HF
 - Shortwave
-- Transceiver
-- Radio Architecture
-- Ideas
 - 2025
-- Shipping Pains
 - RP2350
 - STM32H5
 - Ismo
 - OH2FTG
 - N6QW
-- VeroRoute
-- BFR93A
 ---
 
 Future radio receiver design ideas (from Ismo, Pete and other folks):
@@ -37,7 +27,8 @@ The Pico 2 (RP2350) with dual Cortex-M33 `overclocked` cores should handle:
 - Demodulation
 - USB audio streaming
 
-Also, we are planning to build a opamp powered IF amplifier using the fast `TI TLV3541` part. The LO comes from Si5351 as usual.
+Also, we plan to build an op-amp-powered IF amplifier using the fast
+`TI TLV3541` part. The LO comes from Si5351 as usual.
 
 Note: Before trying the `digital superhet` version (above), I will likely be using MC1496 in a DCR design first.
 

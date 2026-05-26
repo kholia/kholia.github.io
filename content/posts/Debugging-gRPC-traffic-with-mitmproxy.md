@@ -1,24 +1,30 @@
 ---
-title: Debugging / reversing Firebase gRPC traffic with mitmproxy
+title: Debugging/Reversing Firebase gRPC Traffic with mitmproxy
 date: 2025-04-16
 tags:
-- CS
 - Computer Science
-- Security
-- Self-Note
-- Notes
-- Reversing
-- Protobuf
 - gRPC
 - mitmproxy
 - Reverse Engineering
+- Reversing
+- Protobuf
 - MITM
+- Security
+- Notes
 - Hacking
 ---
 
-Recently, I was stuck in figuring out how the Firebase gRPC calls worked and how I could generate, modify, and replay them. Trapping and modifying the existing gRPC traffic was not working too well. Finally, I took a step back and spent some time on learning how to build and debug simple Firebase applications. This approach helped me tremendously and I was able to make further progress with my original task in almost no time.
+Recently, I was stuck trying to understand how Firebase gRPC calls worked and
+how I could generate, modify, and replay them. Trapping and modifying existing
+gRPC traffic was not working well. Finally, I took a step back and spent some
+time learning how to build and debug simple Firebase applications. This
+approach helped me tremendously, and I was able to make further progress with
+my original task quickly.
 
-You may find the following code sample useful when reversing / debugging Firebase applications.
+## Solution
+
+You may find the following code sample useful when reversing/debugging Firebase
+applications.
 
 ```python
 #!/usr/bin/env python3
@@ -83,7 +89,7 @@ addons = [AddHeader()]
 
 Run `mitmproxy` with this plugin via the `mitmproxy -s plug.py` command.
 
-Findings:
+## Findings
 
 - Existing tools like `HTTP Toolkit` fare poorly when trying to replay the 'binary' gRPC traffic. `HTTP Toolkit` also makes modifications of binary request bodies hard. Hopefully these current limitations will be addressed in the near future.
 
@@ -91,6 +97,7 @@ Findings:
 
 - Old Android versions require older versions of Magisk. The latest (28103) version of Magisk doesn't work with Android 9.x or 10.x for example.
 
-- For (binary) request + response modifications, mitmproxy remains the gold standard it seems.
+- For (binary) request + response modifications, mitmproxy appears to remain
+  the gold standard.
 
 Happy hacking!
