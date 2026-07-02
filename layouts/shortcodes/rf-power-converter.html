@@ -1,0 +1,105 @@
+<div class="rf-calculator" data-rf-calculator>
+  <noscript>
+    <p class="rf-calculator__message rf-calculator__message--error">
+      This calculator needs JavaScript to perform the conversions.
+    </p>
+  </noscript>
+
+  <div class="rf-calculator__impedance">
+    <label for="rf-impedance">Load impedance</label>
+    <div class="rf-calculator__impedance-controls">
+      <select id="rf-impedance" data-rf-impedance>
+        <option value="50" selected>50 Ω — RF and microwave</option>
+        <option value="75">75 Ω — television and video</option>
+        <option value="600">600 Ω — audio</option>
+        <option value="custom">Custom value</option>
+      </select>
+      <div class="rf-calculator__custom" data-rf-custom-wrap hidden>
+        <label for="rf-custom-impedance">Custom impedance (Ω)</label>
+        <input
+          id="rf-custom-impedance"
+          data-rf-custom-impedance
+          type="text"
+          inputmode="decimal"
+          autocomplete="off"
+          value="50"
+        >
+      </div>
+    </div>
+  </div>
+
+  <div class="rf-calculator__fields">
+    <div class="rf-calculator__field">
+      <label for="rf-milliwatts">Power</label>
+      <div class="rf-calculator__input">
+        <input id="rf-milliwatts" data-rf-field="milliwatts" type="text" inputmode="decimal" autocomplete="off" placeholder="1">
+        <span>mW</span>
+      </div>
+    </div>
+
+    <div class="rf-calculator__field">
+      <label for="rf-watts">Power</label>
+      <div class="rf-calculator__input">
+        <input id="rf-watts" data-rf-field="watts" type="text" inputmode="decimal" autocomplete="off" placeholder="0.001">
+        <span>W</span>
+      </div>
+    </div>
+
+    <div class="rf-calculator__field">
+      <label for="rf-dbm">Power level</label>
+      <div class="rf-calculator__input">
+        <input id="rf-dbm" data-rf-field="dbm" type="text" inputmode="decimal" autocomplete="off" placeholder="0">
+        <span>dBm</span>
+      </div>
+    </div>
+
+    <div class="rf-calculator__field">
+      <label for="rf-dbw">Power level</label>
+      <div class="rf-calculator__input">
+        <input id="rf-dbw" data-rf-field="dbw" type="text" inputmode="decimal" autocomplete="off" placeholder="-30">
+        <span>dBW</span>
+      </div>
+    </div>
+
+    <div class="rf-calculator__field">
+      <label for="rf-vrms">RMS voltage</label>
+      <div class="rf-calculator__input">
+        <input id="rf-vrms" data-rf-field="vrms" type="text" inputmode="decimal" autocomplete="off" placeholder="0.223606798">
+        <span>V</span>
+      </div>
+    </div>
+
+    <div class="rf-calculator__field">
+      <label for="rf-vpeak">Peak voltage</label>
+      <div class="rf-calculator__input">
+        <input id="rf-vpeak" data-rf-field="vpeak" type="text" inputmode="decimal" autocomplete="off" placeholder="0.316227766">
+        <span>V</span>
+      </div>
+    </div>
+
+    <div class="rf-calculator__field">
+      <label for="rf-vpp">Peak-to-peak voltage</label>
+      <div class="rf-calculator__input">
+        <input id="rf-vpp" data-rf-field="vpp" type="text" inputmode="decimal" autocomplete="off" placeholder="0.632455532">
+        <span>Vpp</span>
+      </div>
+    </div>
+
+    <div class="rf-calculator__field">
+      <label for="rf-dbmv">Voltage level</label>
+      <div class="rf-calculator__input">
+        <input id="rf-dbmv" data-rf-field="dbmv" type="text" inputmode="decimal" autocomplete="off" placeholder="46.989700">
+        <span>dBmV</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="rf-calculator__footer">
+    <p class="rf-calculator__message" data-rf-message aria-live="polite">
+      Enter a value in any field to begin.
+    </p>
+    <button type="button" class="rf-calculator__clear" data-rf-clear>Clear values</button>
+  </div>
+</div>
+
+<script defer src="{{ "js/rf-power-converter.js" | relURL }}"></script>

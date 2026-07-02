@@ -76,6 +76,10 @@ menu:
       name: Tags
       url: /tags/
       weight: 20
+    - identifier: tools
+      name: Tools
+      url: /tools/
+      weight: 25
     - identifier: about
       name: About
       url: /about/

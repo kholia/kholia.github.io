@@ -44,7 +44,16 @@ The setup:
 
 Now the 2m WSPR decodes aren't affected by the fan running, open windows with changing weather and so on 😅
 
-Next challenge: Get WSPR to work on UHF (~433 MHz band). Oh, we also need to figure out a low-cost, non-linear VHF amplifier chain.
+Next challenge: Get WSPR to work on UHF (~433 MHz band) at a low cost.
+
+Oh, we also need to figure out a low-cost, non-linear VHF amplifier chain
+
+Update: Si5351 → INNOTION YG401530VB → RD15HVF1-501 chain with suitable filters
+should work great and easily enough to produce ~5W. We now wonder if `Tokmas
+CID10N65F` will work better (or worse) than RD15HVF1-501 on VHF!
+
+Note: A dedicated PCB for bringing the OCXO and the Si5351 together seems
+overkill but we may do it one day ;)
 
 ## Code
 
@@ -52,6 +61,11 @@ Sample code:
 
 ```cpp
 // Runs on Raspberry Pi Pico (and 2). WSPR timing is done manually ;)
+
+// See https://github.com/kholia/Easy-Digital-Beacons-v1 for better and
+// complete examples.
+//
+// https://github.com/kholia/Easy-Beacons-STEM also is a good reference
 
 #include <Wire.h>
 #include <si5351.h>
@@ -149,7 +163,7 @@ void loop() {
 }
 ```
 
-References:
+References / Resources:
 
 - [Si5351 Specifications, Myths, and Truth](https://www.simonsdialogs.com/2018/11/si5351a-any-frequency-cmos-clock-generator-and-vco-specifications-myths-and-truth/)
 
@@ -160,3 +174,11 @@ References:
 - https://github.com/kholia/Easy-Beacons-STEM
 
 - https://github.com/kholia/Si5351-Module-Clone-TCXO/tree/master/Si5351-Trimmed-Module-25-MHz
+
+- https://www.george-smart.co.uk/wspr/2m_wspr/
+
+- https://www.qsl.net/in3otd/electronics/LDMOS_models/RD15HVF1/RD15HVF1.html
+
+- https://www.ve2zaz.net/2m_WSPR_Beacon/2m_WSPR_Beacon.htm
+
+- https://rfzero.net/tutorials/si5351a/ - Talks about Si5351's operating range 

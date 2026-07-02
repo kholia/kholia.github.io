@@ -98,8 +98,8 @@ Si5351 -- 22Ω +--- gate1 ---- 22Ω ----+
               +--- gate2 ---- 22Ω ----+
 ```
 
-https://www.random-science-tools.com/electronics/dBm-Watts-volts.htm is very
-useful for doing the math.
+The local [RF power converter]({{< relref "/tools/rf-power-converter.md" >}}) is
+useful for doing the math without leaving this site.
 
 ## Cost
 

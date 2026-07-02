@@ -11,3 +11,165 @@
     font-family: 'Ubuntu Mono', monospace;
     max-height: 40rem;
 }
+
+/* RF power converter */
+.rf-calculator {
+    --rf-border: rgba(128, 128, 128, 0.35);
+    --rf-border: color-mix(in srgb, var(--primary) 22%, transparent);
+    --rf-surface: var(--code-bg);
+    --rf-surface: color-mix(in srgb, var(--code-bg) 72%, transparent);
+    margin: 2rem 0;
+    padding: clamp(1rem, 3vw, 1.75rem);
+    border: 1px solid var(--rf-border);
+    border-radius: 12px;
+    background: var(--rf-surface);
+}
+
+.rf-calculator label {
+    font-weight: 600;
+}
+
+.rf-calculator select,
+.rf-calculator input,
+.rf-calculator button {
+    min-height: 2.75rem;
+    border: 1px solid var(--rf-border);
+    border-radius: 8px;
+    color: var(--primary);
+    background: var(--theme);
+    font: inherit;
+}
+
+.rf-calculator select,
+.rf-calculator input {
+    width: 100%;
+    padding: 0.55rem 0.7rem;
+}
+
+.rf-calculator select:focus,
+.rf-calculator input:focus,
+.rf-calculator button:focus-visible {
+    outline: 2px solid var(--primary);
+    outline-offset: 2px;
+}
+
+.rf-calculator input[aria-invalid="true"] {
+    border-color: #c62828;
+    outline-color: #c62828;
+}
+
+.rf-calculator__impedance {
+    display: grid;
+    grid-template-columns: minmax(9rem, 0.45fr) minmax(15rem, 1fr);
+    gap: 0.5rem 1rem;
+    align-items: start;
+    padding-bottom: 1.25rem;
+    border-bottom: 1px solid var(--rf-border);
+}
+
+.rf-calculator__impedance > label {
+    padding-top: 0.65rem;
+}
+
+.rf-calculator__custom {
+    display: grid;
+    grid-template-columns: 1fr minmax(7rem, 0.55fr);
+    gap: 0.5rem 1rem;
+    align-items: center;
+    margin-top: 0.75rem;
+}
+
+.rf-calculator__custom[hidden] {
+    display: none;
+}
+
+.rf-calculator__fields {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem 1.25rem;
+    margin-top: 1.25rem;
+}
+
+.rf-calculator__field {
+    display: grid;
+    grid-template-columns: minmax(8rem, 0.8fr) minmax(0, 1.4fr);
+    gap: 0.75rem;
+    align-items: center;
+}
+
+.rf-calculator__input {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 3.5rem;
+    align-items: center;
+}
+
+.rf-calculator__input input {
+    border-radius: 8px 0 0 8px;
+    font-family: 'Ubuntu Mono', monospace;
+    font-variant-numeric: tabular-nums;
+}
+
+.rf-calculator__input span {
+    display: grid;
+    min-height: 2.75rem;
+    place-items: center;
+    border: 1px solid var(--rf-border);
+    border-left: 0;
+    border-radius: 0 8px 8px 0;
+    color: var(--secondary);
+    background: var(--code-bg);
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+.rf-calculator__footer {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 1.5rem;
+}
+
+.rf-calculator__message {
+    margin: 0;
+    color: var(--secondary);
+    font-size: 0.9rem;
+}
+
+.rf-calculator__message--error {
+    color: #c62828;
+}
+
+.rf-calculator__clear {
+    flex: 0 0 auto;
+    padding: 0.5rem 0.9rem;
+    cursor: pointer;
+}
+
+.rf-calculator__clear:hover {
+    background: var(--code-bg);
+}
+
+@media (max-width: 760px) {
+    .rf-calculator__impedance,
+    .rf-calculator__fields {
+        grid-template-columns: 1fr;
+    }
+
+    .rf-calculator__impedance > label {
+        padding-top: 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .rf-calculator__field,
+    .rf-calculator__custom {
+        grid-template-columns: 1fr;
+        gap: 0.35rem;
+    }
+
+    .rf-calculator__footer {
+        align-items: stretch;
+        flex-direction: column;
+    }
+}
