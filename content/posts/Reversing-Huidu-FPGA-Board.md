@@ -253,7 +253,7 @@ endmodule
 
 ## References and Credits
 
-- https://dl.sipeed.com/shareURL/TANG/Primer/IDE (FPGA 'toolchain')
+- https://www.anlogic.com/en/product/software (Look for 'TangDynasty (TD)' IDE - FPGA toolchain)
 
 - https://github.com/q3k/chubby75
 

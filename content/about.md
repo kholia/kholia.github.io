@@ -3,29 +3,36 @@ title: "About"
 date: 2026-01-10
 ---
 
-I am a software security researcher and engineer with a deep interest in how
-real systems fail at the boundaries between software, firmware, hardware, and
-RF.
+Hello, I'm Dhiru. I am a software security researcher and engineer, and I am
+happiest when I am taking a real system apart to understand how it works - and
+how it fails.
 
-My primary background is in software and platform security, with hands-on
-exploration of embedded systems, wireless protocols, RF hardware, and FPGAs
-driven by professional curiosity. This site documents practical experiments,
-research notes, and prototypes that examine security assumptions in real-world
-systems - beyond theory and specifications.
+My roots are in software and platform security, but curiosity keeps pulling me
+across boundaries: into firmware, embedded systems, wireless protocols, RF
+hardware, and FPGAs. I enjoy the point where an idea leaves the specification,
+meets real hardware, and has to survive contact with the physical world.
 
-The work here focuses on:
+One thought from [Bill Aiello](https://www.cs.ubc.ca/news/2019/10/memoriam-professor-william-aiello)
+at UBC Computer Science has stayed with me. I remember it roughly as:
 
-- Software and embedded security
+> Graduate school is an inflection point: the place where we stop being merely
+> consumers of knowledge and begin becoming producers of it.
 
-- Hardware and RF attack surfaces
+That is a paraphrase from memory, but the idea has shaped how I think about
+learning. Understanding something is valuable; testing it, building on it, and
+sharing what you discover is better. This notebook is my small attempt to keep
+doing that.
 
-- Security trust boundaries
+Most of what you will find here comes from hands-on work in software and
+embedded security, hardware and RF attack surfaces, trust boundaries, and the
+practical validation of security models. Some entries are polished projects;
+others are workbench notes from experiments that are still unfolding. I share
+both, because the wrong turns and unresolved questions are often where the most
+useful learning happens.
 
-- Practical validation of security models using real hardware
-
-These are independent research notes and learning experiments, shared to
-encourage deeper understanding of system security from the physical layer
-upward.
+This is an independent notebook, written in the hope that something here saves
+someone an afternoon, sparks a new experiment, or encourages them to look one
+layer deeper.
 
 Security does not stop at code - it extends into silicon, signals, and the
 physical world.

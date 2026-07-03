@@ -243,6 +243,8 @@ Re-login for the added perms to take effect.
 
 - Assembled PCB from JLCPCB - 750
 
+- Import duties - Variable
+
 - Ambrane 3.5mm to 3.5mm male aux stereo cable TRS - 130
 
 - 2.5mm to 3.5mm aux stereo cable - 250 (element14)
@@ -261,11 +263,7 @@ usage of the `HS-100B` chip - hackers gonna hack...
 
 ## References
 
-- https://aprsdroid.org/download/builds/
-
-- https://github.com/na7q/aprsdroid
-
-- https://github.com/ge0rg/aprsdroid
+- [APRS++ for Android](https://play.google.com/store/apps/details?id=com.bunzee.aprsplusplus)
 
 - [AIOC - Known issues](https://github.com/skuep/AIOC?tab=readme-ov-file#known-issues)
 

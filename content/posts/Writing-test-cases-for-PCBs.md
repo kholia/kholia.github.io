@@ -32,7 +32,7 @@ thanks to Akshar Vastarpara (Vicharak) for this awesome idea.
 ```python
 #!/usr/bin/env python3
 """
-check_nets_pcbnew.py — Assert footprint pad → net mapping in a KiCad .kicad_pcb using pcbnew.
+check_nets_pcbnew.py - Assert footprint pad → net mapping in a KiCad .kicad_pcb using pcbnew.
 
 Usage:
   python3 check_nets_pcbnew.py SDR-Board.kicad_pcb --test-file pcb_tests.txt

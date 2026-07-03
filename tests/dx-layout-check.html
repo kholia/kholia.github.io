@@ -1,0 +1,43 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="../themes/PaperMod/assets/css/core/theme-vars.css">
+  <link rel="stylesheet" href="../themes/PaperMod/assets/css/core/reset.css">
+  <link rel="stylesheet" href="../themes/PaperMod/assets/css/common/main.css">
+  <link rel="stylesheet" href="../themes/PaperMod/assets/css/common/md-content.css">
+  <link rel="stylesheet" href="../assets/css/extended/custom.css">
+</head>
+<body>
+  <main class="main">
+    <div class="post-content md-content">
+      <section class="dx-tool">
+        <div class="dx-tool__summary">
+          <dl>
+            <div><dt>Updated</dt><dd>Aug 13, 2026</dd></div>
+            <div><dt>Solar flux</dt><dd>101</dd></div>
+            <div><dt>Kp index</dt><dd>2.0</dd></div>
+            <div><dt>Storm risk</dt><dd>3%</dd></div>
+          </dl>
+        </div>
+      </section>
+    </div>
+  </main>
+  <output id="result"></output>
+  <script>
+    const main = document.querySelector(".main");
+    const labels = Array.from(document.querySelectorAll("dt"));
+    document.querySelector("#result").textContent = JSON.stringify({
+      mainWidth: Math.round(main.getBoundingClientRect().width),
+      labels: labels.map(function (label) {
+        const style = getComputedStyle(label);
+        return {
+          text: label.textContent,
+          width: Math.round(label.getBoundingClientRect().width),
+          lines: Math.round(label.getBoundingClientRect().height / parseFloat(style.lineHeight))
+        };
+      })
+    });
+  </script>
+</body>
+</html>
