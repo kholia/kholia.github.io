@@ -86,6 +86,22 @@ We are going ahead with the `PZT2222A` transistors again!
 
 ![PA0FRI Active Antenna 2026 - PZT2222A - Better PCB](/images/AA-2026-10.png)
 
+Update (July-2026):
+
+The antenna delivers high performance even in the presence of amplified strong
+broadcast channels:
+
+![AA Perf 1](/images/AA-Perf-1.png)
+![AA Perf 2](/images/AA-Perf-2.png)
+![AA Perf 3](/images/AA-Perf-3.png)
+![AA Perf 4](/images/AA-Perf-4.png)
+![AA Perf 5](/images/AA-Perf-5.png)
+
+## AA Comparisons
+
+![AA Comparisons 1](/images/AA-Comparisons-1.png)
+
+![AA Comparisons 2](/images/AA-Comparisons-2.png)
 
 ## Notes
 
@@ -93,12 +109,13 @@ Three aspects of an `active antenna` that affect performance:
 
 - The installation location
 
-- The physical loop itself (currently a 1 m diameter RG-213 coax loop, shorted
-  at both ends). We are not yet sure whether this helps the performance.
+- The physical loop itself - We are currently using a 1 m diameter RG-213 coax
+  loop, shorted at both ends - We are not yet sure whether this helps the
+  performance or not!
 
 - The active amplifier stage
 
-- The compact PCB version fits within a Schedule-80 2-inch PVC endcap easily.
+The compact PCB version fits within a Schedule-80 2-inch PVC endcap easily.
 
 ## Related Articles
 

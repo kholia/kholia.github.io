@@ -1,0 +1,100 @@
+{{- $apiURL := .Site.Params.dxApiURL | default "" -}}
+<section class="dx-tool" data-dx-propagation data-api-url="{{ $apiURL }}">
+  <noscript>
+    <p class="dx-tool__notice dx-tool__notice--error">
+      This tool needs JavaScript to load current propagation data.
+    </p>
+  </noscript>
+
+  <div class="dx-tool__controls">
+    <div class="dx-tool__view-control">
+      <label for="dx-view">Propagation view</label>
+      <select id="dx-view" data-dx-view>
+        <option value="global" selected>Global band conditions</option>
+        <option value="EU">Europe to DX</option>
+        <option value="NA">North America to DX</option>
+        <option value="SA">South America to DX</option>
+        <option value="AS">Asia to DX</option>
+        <option value="OC">Oceania to DX</option>
+        <option value="AF">Africa to DX</option>
+      </select>
+    </div>
+    <button type="button" class="dx-tool__refresh" data-dx-refresh>
+      Refresh now
+    </button>
+  </div>
+
+  <div class="dx-tool__status" role="status" aria-live="polite">
+    <span class="dx-tool__status-dot" aria-hidden="true"></span>
+    <span data-dx-status>Loading current conditions…</span>
+  </div>
+
+  <div class="dx-tool__summary" data-dx-summary hidden>
+    <dl>
+      <div>
+        <dt>Updated</dt>
+        <dd data-dx-updated>—</dd>
+      </div>
+      <div>
+        <dt>Solar flux</dt>
+        <dd data-dx-sfi>—</dd>
+      </div>
+      <div>
+        <dt>Kp index</dt>
+        <dd data-dx-kp>—</dd>
+      </div>
+      <div data-dx-storm-wrap hidden>
+        <dt>Storm risk</dt>
+        <dd data-dx-storm>—</dd>
+      </div>
+    </dl>
+  </div>
+
+  <div class="dx-tool__results" data-dx-results hidden>
+    <div data-dx-global>
+      <h3>Global band conditions</h3>
+      <div class="dx-tool__table-wrap">
+        <table class="dx-tool__table">
+          <thead>
+            <tr>
+              <th scope="col">Band</th>
+              <th scope="col">Now</th>
+              <th scope="col">Condition</th>
+              <th scope="col">Tomorrow</th>
+            </tr>
+          </thead>
+          <tbody data-dx-global-body></tbody>
+        </table>
+      </div>
+    </div>
+
+    <div data-dx-regional hidden>
+      <h3 data-dx-region-title>Regional propagation</h3>
+      <div class="dx-tool__table-wrap">
+        <table class="dx-tool__table">
+          <thead>
+            <tr>
+              <th scope="col">Corridor</th>
+              <th scope="col">Best band</th>
+              <th scope="col">WSPR activity</th>
+              <th scope="col">Spots / TX</th>
+            </tr>
+          </thead>
+          <tbody data-dx-regional-body></tbody>
+        </table>
+      </div>
+      <p class="dx-tool__empty" data-dx-empty hidden>
+        No active DX corridors are reported for this region right now.
+      </p>
+    </div>
+  </div>
+
+  <p class="dx-tool__notice dx-tool__notice--error" data-dx-error hidden></p>
+  <p class="dx-tool__source">
+    Live data from
+    <a href="https://wspr.hb9vqq.ch/" rel="noopener noreferrer">HB9VQQ</a>.
+    Automatic refresh: 5 minutes.
+  </p>
+</section>
+
+<script defer src="{{ "js/hf-propagation.js" | relURL }}"></script>

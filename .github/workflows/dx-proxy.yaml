@@ -1,0 +1,28 @@
+name: Deploy HF propagation proxy
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+      - master
+    paths:
+      - workers/dx-proxy/**
+      - .github/workflows/dx-proxy.yaml
+
+permissions:
+  contents: read
+
+jobs:
+  deploy:
+    if: vars.CLOUDFLARE_WORKER_ENABLED == 'true'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+      - name: Deploy Worker
+        uses: cloudflare/wrangler-action@v4
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          workingDirectory: workers/dx-proxy

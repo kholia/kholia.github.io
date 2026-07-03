@@ -17,6 +17,7 @@ params:
   description: "Dhiru's Notebook"
   keywords: [Blog, Portfolio, Dhiru, Kholia, Dhiru Kholia, Notebook, RF, Hacking, Security]
   author: Dhiru Kholia
+  dxApiURL: "https://proxy.rfcorner.in/dx"
   defaultTheme: auto # dark, light
   disableThemeToggle: false
 

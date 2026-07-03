@@ -29,6 +29,12 @@ DDX-UNO is designed to eliminate excuses.
 
 Imagine a complete sub-1-watt HF digital transceiver smaller (but 'fatter') than a smartphone. Think BaoFeng Mini but even lighter? A tiny PCB protected by heat-shrink tubing contains everything needed for operation: RF front end, audio codec, microcontroller, filtering, and a built-in end-fed half-wave matching transformer. Just unfold the pluggable half-wave wire antenna and the counterpoise, plug into a phone, and get on the air.
 
+## Definition of Portability
+
+If it fits in a small holiday backpack and is almost invisible in the wifey's eyes, it is portable. Bonus points if she mistakes it for a 'charging adapter' ;)
+
+No, a setup with few meters  of thin coax doesn't qualify - sorry! ;(
+
 ## No Battery. No Coax. No Nuisance.
 
 The transceiver draws power directly from the smartphone. A modern MCU handles audio processing, control, and autonomous operation even when a phone is disconnected. The radio can beacon, monitor, decode, or execute preconfigured tasks independently.
@@ -51,7 +57,7 @@ Need 20 meters today? Grab the 20-meter board.
 
 Testing 30 meters tomorrow? Carry the 30-meter version.
 
-Because every board is band-specific, compromises disappear. Filters are simpler, performance improves, and construction costs remain low.
+Because every board is band-specific, compromises disappear. Filters are simpler (and on-board), performance improves, and construction costs remain low.
 
 ## Hardware Philosophy
 
@@ -118,6 +124,12 @@ Because a sub-1-watt transceiver in your pocket will make more contacts than a 1
 
   - Backup plan: Boring SN74LVC244A-QFN (logic-buffer PA approach)
 
+- 1 W RF output!
+
+  - Support for variable power output
+
+  - Recommended maximum RF output is 777 mW for safety ;)
+
 - ES8311 codec with many test points
 
 - Bulk electrolytic SMT caps - Say NO to tantalums!
@@ -144,9 +156,7 @@ Because a sub-1-watt transceiver in your pocket will make more contacts than a 1
 
 - Auto-mode: The MCU does stuff even without the phone connected!
 
-- XC6206P332MR-G, 3.3v 200mA
-
-- EFHW Toroid ~16mm OD
+- XC6206P332MR-G, 3.3v 200mA LDO
 
 - How much power is being generated at 5V drain? 500mW plus is good!
 
@@ -156,7 +166,15 @@ Because a sub-1-watt transceiver in your pocket will make more contacts than a 1
 
 - Modern design with modern ("space-age") components
 
-- Inbuilt EFHW with a 1m to 3m counterpoise
+- Inbuilt EFHW with a 1m to 3m counterpoise - EFHW Toroid ~16mm OD
+
+  Nope - We decided NOT to pursue this approach after running some HW experiments
+
+- `INNOTION YG401530VB` based finals?
+
+- TPS22917DBVR load switch IC - PTT based drain voltage for finals
+
+- TPAS169-73LF powered T/R switch
 
 ## A fresh new architecture?
 
@@ -165,6 +183,10 @@ Because a sub-1-watt transceiver in your pocket will make more contacts than a 1
 - CM108B as the only USB exposed chip
 
 - While there are better Cmedia chips (with embedded programmable MCU?) , they are pretty much unobtanium
+
+## Antenna Options
+
+![Tiny QRP EFHW antenna](/images/EFHW-2027-1.png)
 
 ## Target Price
 
@@ -181,3 +203,11 @@ Filter simulation (from TinyDX project):
 The RX performance is pretty nice!
 
 ![RX performance](/images/DDX-RX-1.png)
+
+## References + Resources
+
+- [1W @ 5V amplifier]({{< relref "1W-5V-Amplifier-2026.md" >}})
+
+- [1W @ 5V amplifier - Redux]({{< relref "1W-5V-Amplifier-2026-Redux.md" >}})
+
+- https://github.com/DG1JAN/UniBalun
