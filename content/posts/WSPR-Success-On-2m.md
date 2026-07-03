@@ -46,7 +46,7 @@ Now the 2m WSPR decodes aren't affected by the fan running, open windows with ch
 
 Next challenge: Get WSPR to work on UHF (~433 MHz band) at a low cost.
 
-Oh, we also need to figure out a low-cost, non-linear VHF amplifier chain
+Oh, we also need to figure out a low-cost, non-linear VHF amplifier chain.
 
 Update: Si5351 → INNOTION YG401530VB → RD15HVF1-501 chain with suitable filters
 should work great and easily enough to produce ~5W. We now wonder if `Tokmas
