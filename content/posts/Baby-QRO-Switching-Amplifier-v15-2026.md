@@ -37,10 +37,6 @@ has an inbuilt T/R switch.
 
 ![Baby-QRO amplifier v15 render](/images/3D-Render-Baby-QRO-Amp-v15.png)
 
-With some new improvements added:
-
-![Baby-QRO amplifier v15 with improvements](/images/3D-Render-Baby-QRO-Amp-v15-2.png)
-
 ## Results
 
 To be tested!
@@ -53,7 +49,7 @@ The input RF comes directly from the Si5351 (3.3V). You can use our [CW-SigGen](
 
 The boost module can generate a high-voltage rail of around 75V at startup. To
 help tame the power-supply startup transients, we added a physical switch and a
-capacitor load before feeding this supply into the amplifier.
+capacitor + resistor preload before feeding this supply into the amplifier.
 
 ## Cost
 
