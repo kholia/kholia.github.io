@@ -522,4 +522,4 @@ References:
 
 - HOPERF TRx Development module CMT2300A-EM-868 - WI-3344-D
 
-  - CMT2310A can do VHF and UHF @ 20 dBM!
+- CMT2310A can do VHF and UHF @ 20 dBM!

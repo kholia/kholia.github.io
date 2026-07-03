@@ -50,6 +50,16 @@ Transmitted SSB quality (received by SDR) 1 @ 1 MHz I2C (`FM+` mode):
     <source src="/audio/Recording-April-2026-04.wav">
 </audio>
 
+*NEW (August-2026)* ESP32-S3 and Si5351 transmitted SSB quality (received by same SDR):
+<audio controls preload="auto">
+    <source src="/audio/ESP32-Si5351-Finale-16k.wav">
+</audio>
+
+*NEW (August-2026)* ESP32-S3 and Si5351 transmitted SSB quality (received by same SDR):
+<audio controls preload="auto">
+    <source src="/audio/ESP32-Si5351-Finale-32k.wav">
+</audio>
+
 ...
 
 Original audio 2:
@@ -87,6 +97,9 @@ available `ColorLight 5A-75B` FPGA board.
 
 The goal is to support faster phase updates, which should improve SSB output
 quality.
+
+August-2026: We now have the `Polar Modulation` working well on the ESP32-S3 +
+Si5351 combination!
 
 ## References and Credits
 
