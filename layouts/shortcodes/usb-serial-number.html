@@ -1,0 +1,46 @@
+<link rel="stylesheet" href="{{ "css/webusb.css" | relURL }}">
+<div class="usb-tool">
+
+
+    <section aria-label="Device selection">
+      <div class="actions">
+        <button id="choose" type="button" disabled>Choose USB device</button>
+        <button id="refresh" class="secondary" type="button" disabled>Refresh authorized devices</button>
+      </div>
+      <p class="hint">Choose a device to grant access to its USB descriptors. Nothing is sent to the device or uploaded.</p>
+      <fieldset>
+        <legend>Show devices</legend>
+        <label for="scope" class="sr-only">Device filter</label>
+        <select id="scope">
+          <option value="target">DDX / Pico / TinyUSB</option>
+          <option value="all">All authorized devices</option>
+          <option value="custom">Custom USB IDs</option>
+        </select>
+        <div id="custom" hidden>
+          <label>Vendor ID <input id="vid" placeholder="e.g. 2E8A" maxlength="6" spellcheck="false" autocomplete="off"></label>
+          <label>Product ID <input id="pid" placeholder="e.g. 000F" maxlength="6" spellcheck="false" autocomplete="off"></label>
+          <span class="hint">Hexadecimal; leave either ID blank to match any.</span>
+        </div>
+      </fieldset>
+    </section>
+
+    <p id="status" role="status" aria-live="polite">Checking WebUSB support…</p>
+    <div id="devices" aria-label="USB devices"></div>
+
+    <noscript><p>This tool requires JavaScript to access WebUSB.</p></noscript>
+    <details>
+      <summary>Device missing?</summary>
+      <p>Use Chrome or Edge on a desktop, with this page served over HTTPS or localhost.
+        The list includes only connected devices you have authorized for this site;
+        use “Choose USB device” to authorize another. The chooser lists devices independently
+        of the display filter above.</p>
+      <p>For RP2350 / RP2040 boards, try holding BOOT while connecting a data-capable USB cable,
+        then choose the bootloader device. The board must enumerate over USB, and its firmware
+        must expose a serial descriptor. Bootloader and application serial numbers can differ. For a DDX firmware license, verify that this USB serial matches the serial reported by the DEMO firmware; use the firmware serial if they differ.</p>
+      <p>Browser and operating-system restrictions may hide some devices. WebUSB cannot reproduce
+        the full system USB inventory or show a USB location or tty/COM path. No serial port is required.</p>
+    </details>
+    <p class="usb-note">Reads USB descriptors only. Does not open, claim, reset, or flash your device.</p>
+
+</div>
+<script type="module" src="{{ "js/webusb.mjs" | relURL }}"></script>

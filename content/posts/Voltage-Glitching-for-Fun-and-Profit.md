@@ -501,6 +501,8 @@ Update (June-2026):
 
 ![Simple Glitcher in action](/images/Simple-Glitcher-2.png)
 
+![Simple Glitcher IRL](/images/PicoGlitcher-IRL-1.jpg)
+
 It works! ;)
 
 The `SimpleGlitcher v0` board was able to glitch CH32V003J4M6 successfully!
