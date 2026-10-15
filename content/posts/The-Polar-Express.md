@@ -52,11 +52,6 @@ Transmitted SSB quality (received by SDR) 1 @ 1 MHz I2C (`FM+` mode):
 
 *NEW (August-2026)* ESP32-S3 and Si5351 transmitted SSB quality (received by same SDR):
 <audio controls preload="auto">
-    <source src="/audio/ESP32-Si5351-Finale-16k.wav">
-</audio>
-
-*NEW (August-2026)* ESP32-S3 and Si5351 transmitted SSB quality (received by same SDR):
-<audio controls preload="auto">
     <source src="/audio/ESP32-Si5351-Finale-32k.wav">
 </audio>
 

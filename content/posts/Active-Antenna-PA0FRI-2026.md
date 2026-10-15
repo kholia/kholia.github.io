@@ -97,6 +97,12 @@ broadcast channels:
 ![AA Perf 4](/images/AA-Perf-4.png)
 ![AA Perf 5](/images/AA-Perf-5.png)
 
+Update (Oct-2026):
+
+We will be manufacturing this `AA` via JLCPCB soon!
+
+![PA0FRI Active Antenna 2027.01](/images/AA-2027-01.png)
+
 ## AA Comparisons
 
 ![AA Comparisons 1](/images/AA-Comparisons-1.png)

@@ -29,3 +29,5 @@ With our current `Digital Amplifier` designs, this Chinese coupled inductor work
 - [YPRH1207C Series](https://www.lcsc.com/search?q=YPRH1207C)
 
 - [XRRF7342 Series](https://www.lcsc.com/search?q=XRRF7342) (only 7.5x7.5)
+
+- [Coilcraft MSD1260-472](https://www.coilcraft.com/en-us/products/power/coupled-inductors/1-1-shielded-coupled/)

@@ -18,6 +18,8 @@ The original PVM kernel tree was based on Linux 6.12.x, while current Linux
 package, and boot the forward port. The resulting tree is available in the
 [`pvm-720` branch](https://github.com/kholia/linux/tree/pvm-720).
 
+Update: Rebased to 7.3.x now!
+
 ## PVM in short
 
 PVM (Pagetable-based Virtual Machine) is a KVM guest hypervisor designed for

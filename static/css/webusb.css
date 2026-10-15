@@ -1,0 +1,44 @@
+.usb-tool {
+    --usb-border: var(--border);
+    --usb-muted: var(--secondary);
+    color: var(--primary);
+    line-height: 1.6;
+}
+.usb-tool section, .usb-tool article { background: var(--theme); border: 1px solid var(--usb-border); border-radius: 12px; padding: 24px; margin: 24px 0; }
+.usb-tool .actions { display: flex; flex-wrap: wrap; gap: 12px; }
+.usb-tool button, .usb-tool select, .usb-tool input { font: inherit; border-radius: 8px; padding: 10px 14px; }
+.usb-tool button { background: var(--primary); color: var(--theme); border: 1px solid var(--primary); cursor: pointer; font-weight: 650; }
+.usb-tool button.secondary, .usb-tool select, .usb-tool input { color: inherit; background: var(--theme); border: 1px solid var(--usb-border); }
+.usb-tool button:disabled { opacity: .5; cursor: default; }
+.usb-tool button:hover:enabled { filter: brightness(.92); }
+.usb-tool :focus-visible { outline: 3px solid #249ceb; outline-offset: 3px; }
+.usb-tool .hint, .usb-tool .usb-note, .usb-tool details { color: var(--usb-muted); font-size: .9rem; }
+.usb-tool fieldset { padding: 16px 0 0; border: 0; border-top: 1px solid var(--usb-border); margin: 20px 0 0; }
+.usb-tool legend { font-size: .85rem; padding: 0 8px 0 0; font-weight: 650; }
+.usb-tool #custom { margin-top: 16px; }
+.usb-tool #custom label { display: inline-flex; flex-direction: column; gap: 4px; margin: 0 12px 12px 0; }
+.usb-tool input { width: 160px; }
+.usb-tool #custom .hint { display: block; }
+.usb-tool #status { padding: 0 4px; }
+.usb-tool #status[data-error="true"] { color: #b53125; }
+.usb-tool h2 { margin: 0 0 16px; font-size: 1.2rem; overflow-wrap: anywhere; }
+.usb-tool dl { margin: 0; display: grid; grid-template-columns: 140px minmax(0, 1fr); gap: 10px 16px; }
+/* Reset PaperMod's definition-list widths inside the device grid. */
+.usb-tool dl > dt, .usb-tool dl > dd { width: auto; min-width: 0; margin: 0; padding: 0; }
+.usb-tool dt { color: var(--usb-muted); }
+.usb-tool dd { margin: 0; overflow-wrap: anywhere; }
+.usb-tool dd.serial { font-family: ui-monospace, monospace; font-weight: 700; font-size: 1.15rem; }
+.usb-tool article button { margin-top: 20px; }
+.usb-tool summary { cursor: pointer; font-weight: 650; }
+.usb-tool details p { margin-top: 12px; }
+.usb-tool .usb-note { border-top: 1px solid var(--usb-border); padding-top: 20px; margin-top: 32px; }
+.usb-tool .sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); }
+.usb-tool [hidden] { display: none !important; }
+@media (max-width: 500px) {
+    .usb-tool section, .usb-tool article { padding: 18px; }
+    .usb-tool dl { grid-template-columns: 1fr; gap: 2px; }
+    .usb-tool dd { margin-bottom: 12px; }
+    .usb-tool .actions button { width: 100%; }
+}
+
+:root[data-theme="dark"] .usb-tool #status[data-error="true"] { color: #ffad9f; }
