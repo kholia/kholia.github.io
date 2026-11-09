@@ -31,3 +31,10 @@ I haven't distro-hopped in more than a decade, but I feel forced to now. After
 using `MX Linux - Xfce` for a few weeks, I may try `Debian Sid`.
 
 I found this ['I'm done with Ubuntu'](https://ounapuu.ee/posts/2025/02/05/done-with-ubuntu/) article quite an interesting read as well.
+
+## Updates
+
+- It is November, 2026 (time flies) and Omarchy is here to save us all!
+
+  As a former Arch Linux user and even an AUR contributor, I am loving Omarchy
+  so far.
