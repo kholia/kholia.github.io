@@ -48,6 +48,8 @@ I learned about the `Sub-1€ TRX` challenge from Ismo (OH2FTG) - thank you
 - Use `CH552G SOP-16` for connectivity with Android phone (CW keyer,
   Auto-Decoding, etc)
 
+  - https://github.com/cnlohr/rv003usb is cheaper and does everything!
+
 - Use INNOTION MMICs for ~1W output :=)
 
 ## Cost

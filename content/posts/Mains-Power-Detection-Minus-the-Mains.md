@@ -10,7 +10,7 @@ tags:
 - DIY
 ---
 
-I wanted an ESP8266 to answer a simple question: is mains power available?
+I wanted an ESP8266 to answer a simple question: Is mains power available?
 
 The ESP8266 was willing to help, provided nobody introduced it to 230 V.
 

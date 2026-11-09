@@ -9,8 +9,6 @@ tags:
 - Technology
 ---
 
-## Avoid Gazon ISP: A Frustrating Experience for Developers
-
 If you're a developer, engineer, or even a moderately technical user, internet
 reliability is not optional - it's foundational. Unfortunately, my experience
 with **Gazon ISP** has been consistently frustrating, to the point where I
